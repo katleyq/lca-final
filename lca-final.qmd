@@ -1,11 +1,120 @@
 ---
 title: "lca-final"
 ---
+# Data wrangling for Container LCA
 
-## Quarto
+## Set up
+```{r}
+library(tidyverse)
+library(googlesheets4)
+library(janitor)
+```
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+## Connect to google sheets
+```{r}
+# authenticate with google sheets
+# gs4_auth()
+
+# set up URL
+source("R/url.R")
+```
+
+## Aluminum container wrangling
 
 ```{r}
-1 + 1
+# pull in aluminium data 
+aluminium_sheet <- read_sheet(sheet_id, sheet = "Aluminium") %>% 
+  clean_names()
+
+# Set up baseline scenario absolute values
+base_scen_alum <- aluminium_sheet %>% 
+  slice(3:14) %>%
+  select(x4:x20) %>%
+  mutate(row_id = row_number()) %>%
+  mutate(across(x4:x20, 
+                ~if_else(row_id == 1 & . == "NULL", 
+                         "Total_Impact", as.character(.)))) %>%
+  select(-row_id) %>%   
+  {
+    df <- .
+    colnames(df) <- as.character(unlist(df[1, ]))
+    df[-1, ]
+  }
+
+# Set up truck_0 scenario absolute values
+truck0_alum <- aluminium_sheet %>% 
+  slice(35:46) %>%
+  select(x4:x20) %>%
+  mutate(row_id = row_number()) %>%
+  mutate(across(x4:x20, 
+                ~if_else(row_id == 1 & . == "NULL", 
+                         "Total_Impact", as.character(.)))) %>%
+  select(-row_id) %>%   
+  {
+    df <- .
+    colnames(df) <- as.character(unlist(df[1, ]))
+    df[-1, ]
+  }
+
+# Set up truck_100 scenario absolute values
+truck100_alum <- aluminium_sheet %>% 
+  slice(35:46) %>%
+  select(x4:x20) %>%
+  mutate(row_id = row_number()) %>%
+  mutate(across(x4:x20, 
+                ~if_else(row_id == 1 & . == "NULL", 
+                         "Total_Impact", as.character(.)))) %>%
+  select(-row_id) %>%   
+  {
+    df <- .
+    colnames(df) <- as.character(unlist(df[1, ]))
+    df[-1, ]
+  }
+
+
+# Set up recycling_0 scenario absolute values
+recycling0_alum <- aluminium_sheet %>% 
+  slice(98:109) %>%
+  select(x4:x20) %>%
+  mutate(row_id = row_number()) %>%
+  mutate(across(x4:x20, 
+                ~if_else(row_id == 1 & . == "NULL", 
+                         "Total_Impact", as.character(.)))) %>%
+  select(-row_id) %>%   
+  {
+    df <- .
+    colnames(df) <- as.character(unlist(df[1, ]))
+    df[-1, ]
+  }
+
+
+# Set up recycling_100 scenario absolute values
+recycling100_alum <- aluminium_sheet %>% 
+  slice(130:141) %>%
+  select(x4:x20) %>%
+  mutate(row_id = row_number()) %>%
+  mutate(across(x4:x20, 
+                ~if_else(row_id == 1 & . == "NULL", 
+                         "Total_Impact", as.character(.)))) %>%
+  select(-row_id) %>%   
+  {
+    df <- .
+    colnames(df) <- as.character(unlist(df[1, ]))
+    df[-1, ]
+  }
+
 ```
+
+
+## Glass container wrangling
+
+```{r}
+
+```
+
+
+
+
+
+
+
