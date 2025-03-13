@@ -1,9 +1,13 @@
 ---
-title: "ESM 273: LCA Final - data cleaning"
+title: "ESM 273: LCA Final"
+format: 
+  html:
+    code-fold: true
+    theme: lux
+    embed-resources: true
 execute:
   warning: false
   message: false
-theme: lux
 ---
 
 # Data wrangling for Container LCA
