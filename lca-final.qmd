@@ -238,7 +238,8 @@ rm(PET_base_scen,
 ```{r}
 all_containers <- rbind(alum_clean,
                         glass_clean,
-                        PET_clean)
+                        PET_clean) %>% 
+  select(container, scenario, impact_method, impact_type, unit, process, value)
 ```
 
 ## Save data
