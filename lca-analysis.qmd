@@ -182,11 +182,10 @@ containers %>%
   select(impact_type, production, transportation, `end-of-life`) %>%
   ungroup() %>% 
   gt()  %>%
-  tab_header(title = "Aluminium") %>% 
+  tab_header(title = "Aluminium") %>%
   fmt_number(
     columns = c(production, transportation, `end-of-life`),
-    decimals = 5,
-    use_seps = TRUE
+    n_sigfig = 3
   )
 ```
 
