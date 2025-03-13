@@ -166,10 +166,27 @@ containers %>%
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
+
+## Contribution Analysis Results Table
 ```{r}
 containers %>% 
   filter(scenario == "base_scenario") %>% 
-  group_by(impact_type, container) %>% 
-  gt()
+  group_by(impact_type, life_cycle) %>%
+  filter(container == "aluminium") %>%
+  summarize(impact_sum = sum(value, na.rm = TRUE))%>%
+  pivot_wider(
+    names_from = life_cycle,
+    values_from = impact_sum
+  ) %>% 
+  select(-`NA`) %>% 
+  select(impact_type, production, transportation, `end-of-life`) %>%
+  ungroup() %>% 
+  gt()  %>%
+  tab_header(title = "Aluminium") %>% 
+  fmt_number(
+    columns = c(production, transportation, `end-of-life`),
+    decimals = 5,
+    use_seps = TRUE
+  )
 ```
 
