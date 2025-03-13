@@ -3,6 +3,7 @@ title: "ESM 273: LCA Final"
 execute:
   warning: false
   message: false
+theme: lux
 ---
 
 # Data wrangling for Container LCA
