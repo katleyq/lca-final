@@ -3160,7 +3160,7 @@ vertical-align: -.125em;
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">colnames</span>(df) <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">unlist</span>(df[<span class="dv">1</span>, ]))</span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>      df[<span class="sc">-</span><span class="dv">1</span>, ]</span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    } <span class="sc">%&gt;%</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">allow_dupes =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    janitor<span class="sc">::</span><span class="fu">clean_names</span>(<span class="at">allow_dupes =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">impact_category =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(</span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">cols =</span> <span class="sc">-</span>impact_category,</span>
@@ -3183,26 +3183,27 @@ vertical-align: -.125em;
 <span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>           <span class="at">container =</span> <span class="st">&quot;aluminium&quot;</span>)</span>
 <span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="co"># pull in aluminium data </span></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>aluminium_sheet <span class="ot">&lt;-</span> <span class="fu">read_sheet</span>(sheet_id, <span class="at">sheet =</span> <span class="st">&quot;Aluminium&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="co"># process each scenario</span></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>alum_base_scen <span class="ot">&lt;-</span> <span class="fu">process_aluminum_scenario</span>(aluminium_sheet, <span class="dv">3</span><span class="sc">:</span><span class="dv">14</span>, <span class="st">&quot;base_scenario&quot;</span>)</span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>alum_truck0 <span class="ot">&lt;-</span> <span class="fu">process_aluminum_scenario</span>(aluminium_sheet, <span class="dv">35</span><span class="sc">:</span><span class="dv">46</span>, <span class="st">&quot;truck_0&quot;</span>)</span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>alum_truck100 <span class="ot">&lt;-</span> <span class="fu">process_aluminum_scenario</span>(aluminium_sheet, <span class="dv">67</span><span class="sc">:</span><span class="dv">78</span>, <span class="st">&quot;truck_100&quot;</span>) </span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>alum_recycling0 <span class="ot">&lt;-</span> <span class="fu">process_aluminum_scenario</span>(aluminium_sheet, <span class="dv">98</span><span class="sc">:</span><span class="dv">109</span>, <span class="st">&quot;recycling_0&quot;</span>)</span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>alum_recycling100 <span class="ot">&lt;-</span> <span class="fu">process_aluminum_scenario</span>(aluminium_sheet, <span class="dv">130</span><span class="sc">:</span><span class="dv">141</span>, <span class="st">&quot;recycling_100&quot;</span>)</span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a><span class="co"># combine scenarios</span></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>alum_clean <span class="ot">&lt;-</span> <span class="fu">rbind</span>(alum_base_scen,</span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>                   alum_truck0,</span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>                   alum_truck100,</span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>                   alum_recycling0,</span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>                   alum_recycling100)</span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="co"># remove intermediate df</span></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(alum_base_scen, alum_truck0, alum_truck100, alum_recycling0, alum_recycling100)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="co"># process each scenario</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>alum_base_scen <span class="ot">&lt;-</span> <span class="fu">process_aluminum_scenario</span>(aluminium_sheet, <span class="dv">3</span><span class="sc">:</span><span class="dv">14</span>, <span class="st">&quot;base_scenario&quot;</span>)</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>alum_truck0 <span class="ot">&lt;-</span> <span class="fu">process_aluminum_scenario</span>(aluminium_sheet, <span class="dv">35</span><span class="sc">:</span><span class="dv">46</span>, <span class="st">&quot;truck_0&quot;</span>)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>alum_truck100 <span class="ot">&lt;-</span> <span class="fu">process_aluminum_scenario</span>(aluminium_sheet, <span class="dv">66</span><span class="sc">:</span><span class="dv">77</span>, <span class="st">&quot;truck_100&quot;</span>) </span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>alum_recycling0 <span class="ot">&lt;-</span> <span class="fu">process_aluminum_scenario</span>(aluminium_sheet, <span class="dv">97</span><span class="sc">:</span><span class="dv">108</span>, <span class="st">&quot;recycling_0&quot;</span>)</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>alum_recycling100 <span class="ot">&lt;-</span> <span class="fu">process_aluminum_scenario</span>(aluminium_sheet, <span class="dv">129</span><span class="sc">:</span><span class="dv">140</span>, <span class="st">&quot;recycling_100&quot;</span>)</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="co"># combine scenarios</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>alum_clean <span class="ot">&lt;-</span> <span class="fu">rbind</span>(alum_base_scen,</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>                   alum_truck0,</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>                   alum_truck100,</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>                   alum_recycling0,</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>                   alum_recycling100)</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="co"># remove intermediate df</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(alum_base_scen, </span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>   alum_truck0, </span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>   alum_truck100, </span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>   alum_recycling0, </span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>   alum_recycling100)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -3250,23 +3251,24 @@ vertical-align: -.125em;
 <span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the function to process each scenario</span></span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>glass_base_scen <span class="ot">&lt;-</span> <span class="fu">process_glass_data</span>(glass_sheet, <span class="dv">4</span><span class="sc">:</span><span class="dv">15</span>, <span class="st">&quot;base_scenario&quot;</span>)</span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>glass_truck0 <span class="ot">&lt;-</span> <span class="fu">process_glass_data</span>(glass_sheet, <span class="dv">36</span><span class="sc">:</span><span class="dv">47</span>, </span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">&quot;truck_0&quot;</span>)</span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>glass_truck100 <span class="ot">&lt;-</span> <span class="fu">process_glass_data</span>(glass_sheet, <span class="dv">74</span><span class="sc">:</span><span class="dv">85</span>, </span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">&quot;truck_100&quot;</span>)</span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>glass_mass_370 <span class="ot">&lt;-</span> <span class="fu">process_glass_data</span>(glass_sheet, <span class="dv">110</span><span class="sc">:</span><span class="dv">121</span>,</span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">&quot;mass_370&quot;</span>)</span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="co"># combine</span></span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>glass_clean <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>  glass_base_scen,</span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>  glass_truck0,</span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>  glass_truck100,</span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>  glass_mass_370</span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(glass_base_scen,glass_truck0, glass_truck100, glass_mass_370)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>glass_base_scen <span class="ot">&lt;-</span> <span class="fu">process_glass_data</span>(glass_sheet, <span class="dv">4</span><span class="sc">:</span><span class="dv">15</span>, </span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">&quot;base_scenario&quot;</span>)</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>glass_truck0 <span class="ot">&lt;-</span> <span class="fu">process_glass_data</span>(glass_sheet, <span class="dv">36</span><span class="sc">:</span><span class="dv">47</span>, </span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">&quot;truck_0&quot;</span>)</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>glass_truck100 <span class="ot">&lt;-</span> <span class="fu">process_glass_data</span>(glass_sheet, <span class="dv">74</span><span class="sc">:</span><span class="dv">85</span>, </span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">&quot;truck_100&quot;</span>)</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>glass_mass_370 <span class="ot">&lt;-</span> <span class="fu">process_glass_data</span>(glass_sheet, <span class="dv">110</span><span class="sc">:</span><span class="dv">121</span>,</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">&quot;mass_370&quot;</span>)</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="co"># combine</span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>glass_clean <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>  glass_base_scen,</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>  glass_truck0,</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>  glass_truck100,</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>  glass_mass_370</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(glass_base_scen,glass_truck0, glass_truck100, glass_mass_370)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -3351,10 +3353,34 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>all_containers <span class="ot">&lt;-</span> <span class="fu">rbind</span>(alum_clean,</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                        glass_clean,</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                        PET_clean) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(container, scenario, impact_method, impact_type, unit, process, value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># scratch</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># process_list = data.frame(unique(all_containers$process))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># combine containers</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>all_containers <span class="ot">&lt;-</span> <span class="fu">rbind</span>(alum_clean,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                       glass_clean,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                       PET_clean)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># all_containers &lt;- rbind(alum_clean,</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#                         glass_clean,</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#                         PET_clean) %&gt;% </span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">#   select(container, scenario, impact_method, impact_type, unit, process, value) %&gt;% </span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(life_cycle = case_when(</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">#     process == &quot;fake_process&quot; ~ &quot;production&quot;,</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">#     process == &quot;fake_process&quot; ~ &quot;production&quot;,</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">#     process == &quot;fake_process&quot; ~ &quot;production&quot;,</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">#     process == &quot;fake_process&quot; ~ &quot;production&quot;,</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">#     process == &quot;fake_process&quot; ~ &quot;production&quot;,</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co">#     process == &quot;fake_process&quot; ~ &quot;production&quot;,</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co">#     process == &quot;fake_process&quot; ~ &quot;production&quot;,</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co">#     process == &quot;fake_process&quot; ~ &quot;production&quot;,</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co">#     process == &quot;total_impact&quot; ~ &quot;total_impact&quot;,</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co">#     TRUE ~ NA_character_</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co">#   ))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -3363,7 +3389,7 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(all_containers, <span class="st">&quot;data/all_containers.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(all_containers, <span class="st">&quot;data/all_containers.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -3373,41 +3399,41 @@ vertical-align: -.125em;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>containers <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">&quot;data/all_containers.csv&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>containers <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">&quot;data/all_containers.csv&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">&#39;total_impact&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(container, scenario, impact_type, unit, process, value) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">&#39;total_impact&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(container, scenario, impact_type, unit, process, value) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="jcrckylqvy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jcrckylqvy table {
+<div id="ddsgkifpnv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ddsgkifpnv table {
 font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-#jcrckylqvy thead, #jcrckylqvy tbody, #jcrckylqvy tfoot, #jcrckylqvy tr, #jcrckylqvy td, #jcrckylqvy th {
+#ddsgkifpnv thead, #ddsgkifpnv tbody, #ddsgkifpnv tfoot, #ddsgkifpnv tr, #ddsgkifpnv td, #ddsgkifpnv th {
 border-style: none;
 }
-#jcrckylqvy p {
+#ddsgkifpnv p {
 margin: 0;
 padding: 0;
 }
-#jcrckylqvy .gt_table {
+#ddsgkifpnv .gt_table {
 display: table;
 border-collapse: collapse;
 line-height: normal;
@@ -3432,11 +3458,11 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#jcrckylqvy .gt_caption {
+#ddsgkifpnv .gt_caption {
 padding-top: 4px;
 padding-bottom: 4px;
 }
-#jcrckylqvy .gt_title {
+#ddsgkifpnv .gt_title {
 color: #333333;
 font-size: 125%;
 font-weight: initial;
@@ -3447,7 +3473,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }
-#jcrckylqvy .gt_subtitle {
+#ddsgkifpnv .gt_subtitle {
 color: #333333;
 font-size: 85%;
 font-weight: initial;
@@ -3458,7 +3484,7 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }
-#jcrckylqvy .gt_heading {
+#ddsgkifpnv .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -3469,12 +3495,12 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#jcrckylqvy .gt_bottom_border {
+#ddsgkifpnv .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#jcrckylqvy .gt_col_headings {
+#ddsgkifpnv .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -3488,7 +3514,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#jcrckylqvy .gt_col_heading {
+#ddsgkifpnv .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3507,7 +3533,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }
-#jcrckylqvy .gt_column_spanner_outer {
+#ddsgkifpnv .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3518,13 +3544,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }
-#jcrckylqvy .gt_column_spanner_outer:first-child {
+#ddsgkifpnv .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }
-#jcrckylqvy .gt_column_spanner_outer:last-child {
+#ddsgkifpnv .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }
-#jcrckylqvy .gt_column_spanner {
+#ddsgkifpnv .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -3535,10 +3561,10 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
-#jcrckylqvy .gt_spanner_row {
+#ddsgkifpnv .gt_spanner_row {
 border-bottom-style: hidden;
 }
-#jcrckylqvy .gt_group_heading {
+#ddsgkifpnv .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3563,7 +3589,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 text-align: left;
 }
-#jcrckylqvy .gt_empty_group_heading {
+#ddsgkifpnv .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -3577,13 +3603,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }
-#jcrckylqvy .gt_from_md > :first-child {
+#ddsgkifpnv .gt_from_md > :first-child {
 margin-top: 0;
 }
-#jcrckylqvy .gt_from_md > :last-child {
+#ddsgkifpnv .gt_from_md > :last-child {
 margin-bottom: 0;
 }
-#jcrckylqvy .gt_row {
+#ddsgkifpnv .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3601,7 +3627,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }
-#jcrckylqvy .gt_stub {
+#ddsgkifpnv .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3613,7 +3639,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }
-#jcrckylqvy .gt_stub_row_group {
+#ddsgkifpnv .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -3626,13 +3652,13 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }
-#jcrckylqvy .gt_row_group_first td {
+#ddsgkifpnv .gt_row_group_first td {
 border-top-width: 2px;
 }
-#jcrckylqvy .gt_row_group_first th {
+#ddsgkifpnv .gt_row_group_first th {
 border-top-width: 2px;
 }
-#jcrckylqvy .gt_summary_row {
+#ddsgkifpnv .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -3641,14 +3667,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#jcrckylqvy .gt_first_summary_row {
+#ddsgkifpnv .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }
-#jcrckylqvy .gt_first_summary_row.thick {
+#ddsgkifpnv .gt_first_summary_row.thick {
 border-top-width: 2px;
 }
-#jcrckylqvy .gt_last_summary_row {
+#ddsgkifpnv .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3657,7 +3683,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#jcrckylqvy .gt_grand_summary_row {
+#ddsgkifpnv .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -3666,7 +3692,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#jcrckylqvy .gt_first_grand_summary_row {
+#ddsgkifpnv .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3675,7 +3701,7 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
-#jcrckylqvy .gt_last_grand_summary_row_top {
+#ddsgkifpnv .gt_last_grand_summary_row_top {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -3684,10 +3710,10 @@ border-bottom-style: double;
 border-bottom-width: 6px;
 border-bottom-color: #D3D3D3;
 }
-#jcrckylqvy .gt_striped {
+#ddsgkifpnv .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
-#jcrckylqvy .gt_table_body {
+#ddsgkifpnv .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -3695,7 +3721,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#jcrckylqvy .gt_footnotes {
+#ddsgkifpnv .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -3708,7 +3734,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#jcrckylqvy .gt_footnote {
+#ddsgkifpnv .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-top: 4px;
@@ -3716,7 +3742,7 @@ padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#jcrckylqvy .gt_sourcenotes {
+#ddsgkifpnv .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -3729,57 +3755,57 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#jcrckylqvy .gt_sourcenote {
+#ddsgkifpnv .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#jcrckylqvy .gt_left {
+#ddsgkifpnv .gt_left {
 text-align: left;
 }
-#jcrckylqvy .gt_center {
+#ddsgkifpnv .gt_center {
 text-align: center;
 }
-#jcrckylqvy .gt_right {
+#ddsgkifpnv .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }
-#jcrckylqvy .gt_font_normal {
+#ddsgkifpnv .gt_font_normal {
 font-weight: normal;
 }
-#jcrckylqvy .gt_font_bold {
+#ddsgkifpnv .gt_font_bold {
 font-weight: bold;
 }
-#jcrckylqvy .gt_font_italic {
+#ddsgkifpnv .gt_font_italic {
 font-style: italic;
 }
-#jcrckylqvy .gt_super {
+#ddsgkifpnv .gt_super {
 font-size: 65%;
 }
-#jcrckylqvy .gt_footnote_marks {
+#ddsgkifpnv .gt_footnote_marks {
 font-size: 75%;
 vertical-align: 0.4em;
 position: initial;
 }
-#jcrckylqvy .gt_asterisk {
+#ddsgkifpnv .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }
-#jcrckylqvy .gt_indent_1 {
+#ddsgkifpnv .gt_indent_1 {
 text-indent: 5px;
 }
-#jcrckylqvy .gt_indent_2 {
+#ddsgkifpnv .gt_indent_2 {
 text-indent: 10px;
 }
-#jcrckylqvy .gt_indent_3 {
+#ddsgkifpnv .gt_indent_3 {
 text-indent: 15px;
 }
-#jcrckylqvy .gt_indent_4 {
+#ddsgkifpnv .gt_indent_4 {
 text-indent: 20px;
 }
-#jcrckylqvy .gt_indent_5 {
+#ddsgkifpnv .gt_indent_5 {
 text-indent: 25px;
 }
 </style>
@@ -4769,17 +4795,17 @@ text-indent: 25px;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">&#39;total_impact&#39;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum_total_impact =</span> <span class="fu">sum</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> container, <span class="at">y =</span> sum_total_impact, <span class="at">fill =</span> container)) <span class="sc">+</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>scenario) <span class="sc">+</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Sum of Total Impact&quot;</span>,</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Container Type&quot;</span>,</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Total Impact of All Scenarios&quot;</span>) <span class="sc">+</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">&#39;total_impact&#39;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum_total_impact =</span> <span class="fu">sum</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> container, <span class="at">y =</span> sum_total_impact, <span class="at">fill =</span> container)) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>scenario) <span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Sum of Total Impact&quot;</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Container Type&quot;</span>,</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Total Impact of All Scenarios&quot;</span>) <span class="sc">+</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -4792,18 +4818,18 @@ text-indent: 25px;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">&#39;total_impact&#39;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum_total_impact =</span> <span class="fu">sum</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> scenario, <span class="at">y =</span> sum_total_impact, <span class="at">fill =</span> scenario)) <span class="sc">+</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>container) <span class="sc">+</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Sum of Total Impact&quot;</span>,</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Container Type&quot;</span>,</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Total Impact of All Scenarios&quot;</span>) <span class="sc">+</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">&#39;total_impact&#39;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum_total_impact =</span> <span class="fu">sum</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> scenario, <span class="at">y =</span> sum_total_impact, <span class="at">fill =</span> scenario)) <span class="sc">+</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>container) <span class="sc">+</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Sum of Total Impact&quot;</span>,</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Container Type&quot;</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Total Impact of All Scenarios&quot;</span>) <span class="sc">+</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -4816,17 +4842,17 @@ text-indent: 25px;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">&#39;total_impact&#39;</span>,</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>         container <span class="sc">==</span> <span class="st">&#39;glass&#39;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum_total_impact =</span> <span class="fu">sum</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> container, <span class="at">y =</span> sum_total_impact, <span class="at">fill =</span> scenario)) <span class="sc">+</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Sum of Total Impact&quot;</span>,</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Container Type&quot;</span>,</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Total Impact of Glass by Scenario&quot;</span>) <span class="sc">+</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">&#39;total_impact&#39;</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>         container <span class="sc">==</span> <span class="st">&#39;glass&#39;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum_total_impact =</span> <span class="fu">sum</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> container, <span class="at">y =</span> sum_total_impact, <span class="at">fill =</span> scenario)) <span class="sc">+</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Sum of Total Impact&quot;</span>,</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Container Type&quot;</span>,</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Total Impact of Glass by Scenario&quot;</span>) <span class="sc">+</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -4839,17 +4865,17 @@ text-indent: 25px;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">&#39;total_impact&#39;</span>,</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>         container <span class="sc">==</span> <span class="st">&#39;PET&#39;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum_total_impact =</span> <span class="fu">sum</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> container, <span class="at">y =</span> sum_total_impact, <span class="at">fill =</span> scenario)) <span class="sc">+</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Sum of Total Impact&quot;</span>,</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Container Type&quot;</span>,</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Total Impact of PET by Scenario&quot;</span>) <span class="sc">+</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">&#39;total_impact&#39;</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>         container <span class="sc">==</span> <span class="st">&#39;PET&#39;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum_total_impact =</span> <span class="fu">sum</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> container, <span class="at">y =</span> sum_total_impact, <span class="at">fill =</span> scenario)) <span class="sc">+</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Sum of Total Impact&quot;</span>,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Container Type&quot;</span>,</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Total Impact of PET by Scenario&quot;</span>) <span class="sc">+</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -4862,17 +4888,17 @@ text-indent: 25px;
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">&#39;total_impact&#39;</span>,</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>         container <span class="sc">==</span> <span class="st">&#39;aluminium&#39;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum_total_impact =</span> <span class="fu">sum</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> container, <span class="at">y =</span> sum_total_impact, <span class="at">fill =</span> scenario)) <span class="sc">+</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Sum of Total Impact&quot;</span>,</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Container Type&quot;</span>,</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Total Impact of Aluminium by Scenario&quot;</span>) <span class="sc">+</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">&#39;total_impact&#39;</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>         container <span class="sc">==</span> <span class="st">&#39;aluminium&#39;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum_total_impact =</span> <span class="fu">sum</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> container, <span class="at">y =</span> sum_total_impact, <span class="at">fill =</span> scenario)) <span class="sc">+</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Sum of Total Impact&quot;</span>,</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Container Type&quot;</span>,</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Total Impact of Aluminium by Scenario&quot;</span>) <span class="sc">+</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>

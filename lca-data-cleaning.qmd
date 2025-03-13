@@ -58,7 +58,7 @@ process_aluminum_scenario <- function(data_sheet, row_range, scenario_name) {
       colnames(df) <- as.character(unlist(df[1, ]))
       df[-1, ]
     } %>%
-    janitor::clean_names(allow_dupes = FALSE) %>%
+    janitor::clean_names(allow_dupes = FALSE) %>% 
     rename(impact_category = 1) %>%
     pivot_longer(
       cols = -impact_category,
@@ -81,16 +81,13 @@ process_aluminum_scenario <- function(data_sheet, row_range, scenario_name) {
            container = "aluminium")
 }
 
-# pull in aluminium data 
-aluminium_sheet <- read_sheet(sheet_id, sheet = "Aluminium") %>%
-  clean_names()
 
 # process each scenario
 alum_base_scen <- process_aluminum_scenario(aluminium_sheet, 3:14, "base_scenario")
 alum_truck0 <- process_aluminum_scenario(aluminium_sheet, 35:46, "truck_0")
-alum_truck100 <- process_aluminum_scenario(aluminium_sheet, 67:78, "truck_100") 
-alum_recycling0 <- process_aluminum_scenario(aluminium_sheet, 98:109, "recycling_0")
-alum_recycling100 <- process_aluminum_scenario(aluminium_sheet, 130:141, "recycling_100")
+alum_truck100 <- process_aluminum_scenario(aluminium_sheet, 66:77, "truck_100") 
+alum_recycling0 <- process_aluminum_scenario(aluminium_sheet, 97:108, "recycling_0")
+alum_recycling100 <- process_aluminum_scenario(aluminium_sheet, 129:140, "recycling_100")
 
 # combine scenarios
 alum_clean <- rbind(alum_base_scen,
@@ -100,7 +97,11 @@ alum_clean <- rbind(alum_base_scen,
                    alum_recycling100)
 
 # remove intermediate df
-rm(alum_base_scen, alum_truck0, alum_truck100, alum_recycling0, alum_recycling100)
+rm(alum_base_scen, 
+   alum_truck0, 
+   alum_truck100, 
+   alum_recycling0, 
+   alum_recycling100)
 ```
 
 ## Glass container wrangling
@@ -145,7 +146,8 @@ process_glass_data <- function(glass_sheet, row_range, scenario_name) {
 }
 
 # Use the function to process each scenario
-glass_base_scen <- process_glass_data(glass_sheet, 4:15, "base_scenario")
+glass_base_scen <- process_glass_data(glass_sheet, 4:15, 
+                                      "base_scenario")
 glass_truck0 <- process_glass_data(glass_sheet, 36:47, 
                                    "truck_0")
 glass_truck100 <- process_glass_data(glass_sheet, 74:85, 
@@ -240,11 +242,35 @@ rm(PET_base_scen,
 ## Combining containers
 
 ```{r}
-all_containers <- rbind(alum_clean,
-                        glass_clean,
-                        PET_clean) %>% 
-  select(container, scenario, impact_method, impact_type, unit, process, value)
+# scratch
+# process_list = data.frame(unique(all_containers$process))
 ```
+
+
+```{r}
+# combine containers
+all_containers <- rbind(alum_clean,
+                       glass_clean,
+                       PET_clean)
+
+# all_containers <- rbind(alum_clean,
+#                         glass_clean,
+#                         PET_clean) %>% 
+#   select(container, scenario, impact_method, impact_type, unit, process, value) %>% 
+#   mutate(life_cycle = case_when(
+#     process == "fake_process" ~ "production",
+#     process == "fake_process" ~ "production",
+#     process == "fake_process" ~ "production",
+#     process == "fake_process" ~ "production",
+#     process == "fake_process" ~ "production",
+#     process == "fake_process" ~ "production",
+#     process == "fake_process" ~ "production",
+#     process == "fake_process" ~ "production",
+#     process == "total_impact" ~ "total_impact",
+#     TRUE ~ NA_character_
+#   ))
+```
+
 
 ## Save data
 
