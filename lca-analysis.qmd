@@ -10,23 +10,20 @@ execute:
   message: false
 ---
 
-```{r}
-library(tidyverse)
-library(here)
-library(gt)
-```
-
 # Data wrangling for Container LCA
 
 ## Set up
 
 ```{r}
 library(tidyverse)
+library(here)
+library(gt)
 library(googlesheets4)
 library(janitor)
 ```
 
-## Connect to google sheets
+
+Connect to google sheets
 
 ```{r}
 # authenticate with google sheets
@@ -271,7 +268,8 @@ all_containers <- rbind(alum_clean,
     process == "eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg" ~ "end-of-life",
     process == "eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg" ~ "production",
     process == "glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so" ~ "transportation",
-    process == "	glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so" ~ "transportation",
+    process == "glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so" ~ "transportation",
+    process == "	glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so " ~ "transportation",
     process == "glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2" ~ "transportation",
     process == "glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so" ~ "transportation",
     process == "us_diesel_mix_at_refinery_ts" ~ "transportation",
@@ -465,7 +463,6 @@ containers %>%
     names_from = life_cycle,
     values_from = impact_sum
   ) %>% 
-  select(-`NA`) %>% 
   select(impact_type, production, transportation, `end-of-life`) %>%
   ungroup() %>% 
   gt()  %>%
@@ -486,7 +483,6 @@ containers %>%
     names_from = life_cycle,
     values_from = impact_sum
   ) %>% 
-  select(-`NA`) %>% 
   select(impact_type, production, transportation, `end-of-life`) %>%
   ungroup() %>% 
   gt()  %>%
@@ -507,7 +503,6 @@ containers %>%
     names_from = life_cycle,
     values_from = impact_sum
   ) %>% 
-  select(-`NA`) %>% 
   select(impact_type, production, transportation, `end-of-life`) %>%
   ungroup() %>% 
   gt()  %>%
