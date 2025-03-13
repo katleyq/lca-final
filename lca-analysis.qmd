@@ -98,3 +98,71 @@ containers %>%
   theme_bw()
 ```
 
+```{r}
+containers %>% 
+  filter(scenario == "base_scenario") %>% 
+  group_by(impact_type, container) %>% 
+  summarize(sum_total_impact = sum(value, na.rm = TRUE)) %>%
+  ggplot(aes(x = impact_type, y = sum_total_impact, fill = container)) +
+  geom_col(position = "dodge") +
+  labs(y = "Total Impact",
+       x = "Container Type",
+       title = "Baseline Scenario by Impact Category") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+```{r}
+containers %>% 
+  filter(scenario == "recycling_100") %>% 
+  group_by(impact_type, container) %>% 
+  summarize(sum_total_impact = sum(value, na.rm = TRUE)) %>%
+  ggplot(aes(x = impact_type, y = sum_total_impact, fill = container)) +
+  geom_col(position = "dodge") +
+  labs(y = "Total Impact",
+       x = "Container Type",
+       title = "Recycling 100% Scenario by Impact Category") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+```{r}
+containers %>% 
+  filter(scenario == "recycling_0") %>% 
+  group_by(impact_type, container) %>% 
+  summarize(sum_total_impact = sum(value, na.rm = TRUE)) %>%
+  ggplot(aes(x = impact_type, y = sum_total_impact, fill = container)) +
+  geom_col(position = "dodge") +
+  labs(y = "Total Impact",
+       x = "Container Type",
+       title = "Recycling 0% Scenario by Impact Category") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+```{r}
+containers %>% 
+  filter(scenario == "truck_0") %>% 
+  group_by(impact_type, container) %>% 
+  summarize(sum_total_impact = sum(value, na.rm = TRUE)) %>%
+  ggplot(aes(x = impact_type, y = sum_total_impact, fill = container)) +
+  geom_col(position = "dodge") +
+  labs(y = "Total Impact",
+       x = "Container Type",
+       title = "Truck 0% Scenario by Impact Category") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+```{r}
+containers %>% 
+  filter(scenario == "truck_100") %>% 
+  group_by(impact_type, container) %>% 
+  summarize(sum_total_impact = sum(value, na.rm = TRUE)) %>%
+  ggplot(aes(x = impact_type, y = sum_total_impact, fill = container)) +
+  geom_col(position = "dodge") +
+  labs(y = "Total Impact",
+       x = "Container Type",
+       title = "Truck 100% Scenario by Impact Category") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
