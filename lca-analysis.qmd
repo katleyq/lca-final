@@ -189,3 +189,45 @@ containers %>%
   )
 ```
 
+```{r}
+containers %>% 
+  filter(scenario == "base_scenario") %>% 
+  group_by(impact_type, life_cycle) %>%
+  filter(container == "PET") %>%
+  summarize(impact_sum = sum(value, na.rm = TRUE))%>%
+  pivot_wider(
+    names_from = life_cycle,
+    values_from = impact_sum
+  ) %>% 
+  select(-`NA`) %>% 
+  select(impact_type, production, transportation, `end-of-life`) %>%
+  ungroup() %>% 
+  gt()  %>%
+  tab_header(title = "PET") %>%
+  fmt_number(
+    columns = c(production, transportation, `end-of-life`),
+    n_sigfig = 3
+  )
+```
+
+```{r}
+containers %>% 
+  filter(scenario == "base_scenario") %>% 
+  group_by(impact_type, life_cycle) %>%
+  filter(container == "glass") %>%
+  summarize(impact_sum = sum(value, na.rm = TRUE))%>%
+  pivot_wider(
+    names_from = life_cycle,
+    values_from = impact_sum
+  ) %>% 
+  select(-`NA`) %>% 
+  select(impact_type, production, transportation, `end-of-life`) %>%
+  ungroup() %>% 
+  gt()  %>%
+  tab_header(title = "Glass") %>%
+  fmt_number(
+    columns = c(production, transportation, `end-of-life`),
+    n_sigfig = 3
+  )
+```
+
