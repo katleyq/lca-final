@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ESM 273: LCA Final</title>
+<title>ESM 273: LCA Final - data cleaning</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,16 +57,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="lca-final_files/libs/clipboard/clipboard.min.js"></script>
-<script src="lca-final_files/libs/quarto-html/quarto.js"></script>
-<script src="lca-final_files/libs/quarto-html/popper.min.js"></script>
-<script src="lca-final_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="lca-final_files/libs/quarto-html/anchor.min.js"></script>
-<link href="lca-final_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="lca-final_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="lca-final_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="lca-final_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="lca-final_files/libs/bootstrap/bootstrap-eaa675a5e487a6818dceb0d3f806c2fe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="lca-data-cleaning_files/libs/clipboard/clipboard.min.js"></script>
+<script src="lca-data-cleaning_files/libs/quarto-html/quarto.js"></script>
+<script src="lca-data-cleaning_files/libs/quarto-html/popper.min.js"></script>
+<script src="lca-data-cleaning_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="lca-data-cleaning_files/libs/quarto-html/anchor.min.js"></script>
+<link href="lca-data-cleaning_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="lca-data-cleaning_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="lca-data-cleaning_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="lca-data-cleaning_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="lca-data-cleaning_files/libs/bootstrap/bootstrap-eaa675a5e487a6818dceb0d3f806c2fe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ESM 273: LCA Final</h1>
+<h1 class="title">ESM 273: LCA Final - data cleaning</h1>
 </div>
 
 
@@ -256,7 +256,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># function to process glass data for different scenarios</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>process_PET_data <span class="ot">&lt;-</span> <span class="cf">function</span>(PET_sheet, row_range, scenario_name) {</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  PET_sheet <span class="sc">%&gt;%</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">slice</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">slice</span>(row_range) <span class="sc">%&gt;%</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="st">`</span><span class="at">absolute_value</span><span class="st">`</span><span class="sc">:</span>x21) <span class="sc">%&gt;%</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">row_id =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
@@ -328,7 +328,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>all_containers <span class="ot">&lt;-</span> <span class="fu">rbind</span>(alum_clean,</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                        glass_clean,</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                        PET_clean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                        PET_clean) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(container, scenario, impact_method, impact_type, unit, process, value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="save-data" class="level2">
@@ -337,6 +338,1548 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(all_containers, <span class="st">"data/all_containers.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+</section>
+<section id="exploratory-analysis" class="level1">
+<h1>Exploratory Analysis</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>containers <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data/all_containers.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">'total_impact'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(container, scenario, impact_type, unit, process, value) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="pfnidfoffy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pfnidfoffy table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#pfnidfoffy thead, #pfnidfoffy tbody, #pfnidfoffy tfoot, #pfnidfoffy tr, #pfnidfoffy td, #pfnidfoffy th {
+  border-style: none;
+}
+
+#pfnidfoffy p {
+  margin: 0;
+  padding: 0;
+}
+
+#pfnidfoffy .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#pfnidfoffy .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#pfnidfoffy .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#pfnidfoffy .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#pfnidfoffy .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#pfnidfoffy .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pfnidfoffy .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#pfnidfoffy .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#pfnidfoffy .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#pfnidfoffy .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#pfnidfoffy .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#pfnidfoffy .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#pfnidfoffy .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#pfnidfoffy .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#pfnidfoffy .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#pfnidfoffy .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#pfnidfoffy .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#pfnidfoffy .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#pfnidfoffy .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pfnidfoffy .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#pfnidfoffy .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#pfnidfoffy .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#pfnidfoffy .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pfnidfoffy .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#pfnidfoffy .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#pfnidfoffy .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pfnidfoffy .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pfnidfoffy .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#pfnidfoffy .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pfnidfoffy .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#pfnidfoffy .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pfnidfoffy .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#pfnidfoffy .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pfnidfoffy .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#pfnidfoffy .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pfnidfoffy .gt_left {
+  text-align: left;
+}
+
+#pfnidfoffy .gt_center {
+  text-align: center;
+}
+
+#pfnidfoffy .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#pfnidfoffy .gt_font_normal {
+  font-weight: normal;
+}
+
+#pfnidfoffy .gt_font_bold {
+  font-weight: bold;
+}
+
+#pfnidfoffy .gt_font_italic {
+  font-style: italic;
+}
+
+#pfnidfoffy .gt_super {
+  font-size: 65%;
+}
+
+#pfnidfoffy .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#pfnidfoffy .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#pfnidfoffy .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#pfnidfoffy .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#pfnidfoffy .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#pfnidfoffy .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#pfnidfoffy .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="impact_type" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">impact_type</th>
+<th id="unit" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">unit</th>
+<th id="process" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">process</th>
+<th id="value" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">value</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="aluminium - base_scenario" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">aluminium - base_scenario</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="aluminium - base_scenario  impact_type">Acidification</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  unit">kg SO2 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - base_scenario  value">9.61000e-04</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - base_scenario  impact_type">Ecotoxicity (recommended)</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  unit">CTUe</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - base_scenario  value">5.12000e-03</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - base_scenario  impact_type">Eutrophication</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  unit">kg N eq.</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - base_scenario  value">3.10000e-05</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - base_scenario  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  unit">excl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - base_scenario  value">2.27000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - base_scenario  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  unit">incl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - base_scenario  value">2.27000e-01</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - base_scenario  impact_type">Human Health Particulate Air</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  unit">kg PM2.5 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - base_scenario  value">8.59000e-05</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - base_scenario  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  unit">cancer (recommended)</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - base_scenario  value">9.04000e-11</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - base_scenario  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  unit">non-canc. (recommended)</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - base_scenario  value">7.92000e-09</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - base_scenario  impact_type">Ozone Depletion Air</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  unit">kg CFC 11 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - base_scenario  value">3.24000e-12</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - base_scenario  impact_type">Resources</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  unit">Fossil fuels</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - base_scenario  value">2.62000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - base_scenario  impact_type">Smog Air</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  unit">kg O3 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - base_scenario  value">1.18299e-02</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="aluminium - truck_0" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">aluminium - truck_0</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="aluminium - truck_0  impact_type">Acidification</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  unit">kg SO2 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_0  value">9.61000e-04</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - truck_0  impact_type">Ecotoxicity (recommended)</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  unit">CTUe</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_0  value">5.08000e-03</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - truck_0  impact_type">Eutrophication</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  unit">kg N eq.</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_0  value">3.10000e-05</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - truck_0  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  unit">excl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_0  value">2.27000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - truck_0  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  unit">incl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_0  value">2.27000e-01</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - truck_0  impact_type">Human Health Particulate Air</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  unit">kg PM2.5 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_0  value">8.59000e-05</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - truck_0  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  unit">cancer (recommended)</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_0  value">9.02000e-11</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - truck_0  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  unit">non-canc. (recommended)</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_0  value">7.91000e-09</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - truck_0  impact_type">Ozone Depletion Air</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  unit">kg CFC 11 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_0  value">3.24000e-12</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - truck_0  impact_type">Resources</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  unit">Fossil fuels</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_0  value">2.61000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - truck_0  impact_type">Smog Air</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  unit">kg O3 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_0  value">1.19000e-02</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="aluminium - truck_100" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">aluminium - truck_100</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="aluminium - truck_100  impact_type">Acidification</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  unit">kg SO2 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_100  value">9.61000e-04</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - truck_100  impact_type">Ecotoxicity (recommended)</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  unit">CTUe</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_100  value">5.16000e-03</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - truck_100  impact_type">Eutrophication</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  unit">kg N eq.</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_100  value">3.11000e-05</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - truck_100  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  unit">excl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_100  value">2.28000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - truck_100  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  unit">incl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_100  value">2.27000e-01</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - truck_100  impact_type">Human Health Particulate Air</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  unit">kg PM2.5 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_100  value">8.58000e-05</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - truck_100  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  unit">cancer (recommended)</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_100  value">9.06000e-11</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - truck_100  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  unit">non-canc. (recommended)</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_100  value">7.94000e-09</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - truck_100  impact_type">Ozone Depletion Air</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  unit">kg CFC 11 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_100  value">3.24000e-12</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - truck_100  impact_type">Resources</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  unit">Fossil fuels</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_100  value">2.62000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - truck_100  impact_type">Smog Air</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  unit">kg O3 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - truck_100  value">1.18000e-02</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="aluminium - recycling_0" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">aluminium - recycling_0</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="aluminium - recycling_0  impact_type">Acidification</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  unit">kg SO2 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_0  value">1.72000e-03</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - recycling_0  impact_type">Ecotoxicity (recommended)</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  unit">CTUe</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_0  value">8.46000e-03</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - recycling_0  impact_type">Eutrophication</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  unit">kg N eq.</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_0  value">5.04000e-05</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - recycling_0  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  unit">excl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_0  value">3.82000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - recycling_0  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  unit">incl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_0  value">3.82000e-01</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - recycling_0  impact_type">Human Health Particulate Air</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  unit">kg PM2.5 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_0  value">1.59000e-04</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - recycling_0  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  unit">cancer (recommended)</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_0  value">1.60000e-10</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - recycling_0  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  unit">non-canc. (recommended)</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_0  value">1.46000e-08</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - recycling_0  impact_type">Ozone Depletion Air</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  unit">kg CFC 11 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_0  value">5.52000e-12</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - recycling_0  impact_type">Resources</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  unit">Fossil fuels</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_0  value">4.13000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - recycling_0  impact_type">Smog Air</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  unit">kg O3 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_0  value">2.02000e-02</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="aluminium - recycling_100" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">aluminium - recycling_100</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="aluminium - recycling_100  impact_type">Acidification</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  unit">kg SO2 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_100  value">2.02000e-04</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - recycling_100  impact_type">Ecotoxicity (recommended)</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  unit">CTUe</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_100  value">1.79000e-03</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - recycling_100  impact_type">Eutrophication</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  unit">kg N eq.</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_100  value">1.16000e-05</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - recycling_100  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  unit">excl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_100  value">7.24000e-02</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - recycling_100  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  unit">incl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_100  value">7.19000e-02</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - recycling_100  impact_type">Human Health Particulate Air</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  unit">kg PM2.5 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_100  value">1.31000e-05</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - recycling_100  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  unit">cancer (recommended)</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_100  value">2.10000e-11</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - recycling_100  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  unit">non-canc. (recommended)</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_100  value">1.22000e-09</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - recycling_100  impact_type">Ozone Depletion Air</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  unit">kg CFC 11 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_100  value">9.66000e-13</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="aluminium - recycling_100  impact_type">Resources</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  unit">Fossil fuels</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_100  value">1.11000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="aluminium - recycling_100  impact_type">Smog Air</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  unit">kg O3 eq.</td>
+<td class="gt_row gt_left" headers="aluminium - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="aluminium - recycling_100  value">3.48000e-03</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="glass - base_scenario" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">glass - base_scenario</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="glass - base_scenario  impact_type">Acidification</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  unit">kg SO2 eq.</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - base_scenario  value">3.27000e-03</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - base_scenario  impact_type">Ecotoxicity (recommended)</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  unit">CTUe</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - base_scenario  value">1.87000e-02</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - base_scenario  impact_type">Eutrophication</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  unit">kg N eq.</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - base_scenario  value">1.76000e-04</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - base_scenario  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  unit">excl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - base_scenario  value">5.93000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - base_scenario  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  unit">incl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - base_scenario  value">5.92000e-01</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - base_scenario  impact_type">Human Health Particulate Air</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  unit">kg PM2.5 eq.</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - base_scenario  value">1.27000e-04</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - base_scenario  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  unit">cancer (recommended)</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - base_scenario  value">3.00000e-10</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - base_scenario  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  unit">non-canc. (recommended)</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - base_scenario  value">3.17000e-08</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - base_scenario  impact_type">Ozone Depletion Air</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  unit">kg CFC 11 eq.</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - base_scenario  value">2.12000e-15</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - base_scenario  impact_type">Resources</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  unit">Fossil fuels</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - base_scenario  value">1.06000e+00</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - base_scenario  impact_type">Smog Air</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  unit">kg O3 eq.</td>
+<td class="gt_row gt_left" headers="glass - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - base_scenario  value">4.95000e-02</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="glass - truck_0" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">glass - truck_0</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="glass - truck_0  impact_type">Acidification</td>
+<td class="gt_row gt_left" headers="glass - truck_0  unit">kg SO2 eq.</td>
+<td class="gt_row gt_left" headers="glass - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_0  value">3.27000e-03</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - truck_0  impact_type">Ecotoxicity (recommended)</td>
+<td class="gt_row gt_left" headers="glass - truck_0  unit">CTUe</td>
+<td class="gt_row gt_left" headers="glass - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_0  value">1.81000e-02</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - truck_0  impact_type">Eutrophication</td>
+<td class="gt_row gt_left" headers="glass - truck_0  unit">kg N eq.</td>
+<td class="gt_row gt_left" headers="glass - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_0  value">1.75000e-04</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - truck_0  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="glass - truck_0  unit">excl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="glass - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_0  value">5.88000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - truck_0  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="glass - truck_0  unit">incl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="glass - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_0  value">5.87000e-01</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - truck_0  impact_type">Human Health Particulate Air</td>
+<td class="gt_row gt_left" headers="glass - truck_0  unit">kg PM2.5 eq.</td>
+<td class="gt_row gt_left" headers="glass - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_0  value">1.28000e-04</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - truck_0  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="glass - truck_0  unit">cancer (recommended)</td>
+<td class="gt_row gt_left" headers="glass - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_0  value">2.97000e-10</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - truck_0  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="glass - truck_0  unit">non-canc. (recommended)</td>
+<td class="gt_row gt_left" headers="glass - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_0  value">3.15000e-08</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - truck_0  impact_type">Ozone Depletion Air</td>
+<td class="gt_row gt_left" headers="glass - truck_0  unit">kg CFC 11 eq.</td>
+<td class="gt_row gt_left" headers="glass - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_0  value">2.12000e-15</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - truck_0  impact_type">Resources</td>
+<td class="gt_row gt_left" headers="glass - truck_0  unit">Fossil fuels</td>
+<td class="gt_row gt_left" headers="glass - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_0  value">1.05000e+00</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - truck_0  impact_type">Smog Air</td>
+<td class="gt_row gt_left" headers="glass - truck_0  unit">kg O3 eq.</td>
+<td class="gt_row gt_left" headers="glass - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_0  value">4.99000e-02</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="glass - truck_100" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">glass - truck_100</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="glass - truck_100  impact_type">Acidification</td>
+<td class="gt_row gt_left" headers="glass - truck_100  unit">kg SO2 eq.</td>
+<td class="gt_row gt_left" headers="glass - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_100  value">3.27000e-03</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - truck_100  impact_type">Ecotoxicity (recommended)</td>
+<td class="gt_row gt_left" headers="glass - truck_100  unit">CTUe</td>
+<td class="gt_row gt_left" headers="glass - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_100  value">1.94000e-02</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - truck_100  impact_type">Eutrophication</td>
+<td class="gt_row gt_left" headers="glass - truck_100  unit">kg N eq.</td>
+<td class="gt_row gt_left" headers="glass - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_100  value">1.77000e-04</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - truck_100  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="glass - truck_100  unit">excl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="glass - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_100  value">5.97000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - truck_100  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="glass - truck_100  unit">incl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="glass - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_100  value">5.97000e-01</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - truck_100  impact_type">Human Health Particulate Air</td>
+<td class="gt_row gt_left" headers="glass - truck_100  unit">kg PM2.5 eq.</td>
+<td class="gt_row gt_left" headers="glass - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_100  value">1.27000e-04</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - truck_100  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="glass - truck_100  unit">cancer (recommended)</td>
+<td class="gt_row gt_left" headers="glass - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_100  value">3.03000e-10</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - truck_100  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="glass - truck_100  unit">non-canc. (recommended)</td>
+<td class="gt_row gt_left" headers="glass - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_100  value">3.19000e-08</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - truck_100  impact_type">Ozone Depletion Air</td>
+<td class="gt_row gt_left" headers="glass - truck_100  unit">kg CFC 11 eq.</td>
+<td class="gt_row gt_left" headers="glass - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_100  value">2.12000e-15</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - truck_100  impact_type">Resources</td>
+<td class="gt_row gt_left" headers="glass - truck_100  unit">Fossil fuels</td>
+<td class="gt_row gt_left" headers="glass - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_100  value">1.07000e+00</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - truck_100  impact_type">Smog Air</td>
+<td class="gt_row gt_left" headers="glass - truck_100  unit">kg O3 eq.</td>
+<td class="gt_row gt_left" headers="glass - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - truck_100  value">4.92000e-02</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="glass - mass_370" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">glass - mass_370</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="glass - mass_370  impact_type">Acidification</td>
+<td class="gt_row gt_left" headers="glass - mass_370  unit">kg SO2 eq.</td>
+<td class="gt_row gt_left" headers="glass - mass_370  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - mass_370  value">2.14000e-03</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - mass_370  impact_type">Ecotoxicity (recommended)</td>
+<td class="gt_row gt_left" headers="glass - mass_370  unit">CTUe</td>
+<td class="gt_row gt_left" headers="glass - mass_370  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - mass_370  value">1.26000e-02</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - mass_370  impact_type">Eutrophication</td>
+<td class="gt_row gt_left" headers="glass - mass_370  unit">kg N eq.</td>
+<td class="gt_row gt_left" headers="glass - mass_370  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - mass_370  value">1.15000e-04</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - mass_370  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="glass - mass_370  unit">excl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="glass - mass_370  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - mass_370  value">3.90000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - mass_370  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="glass - mass_370  unit">incl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="glass - mass_370  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - mass_370  value">3.90000e-01</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - mass_370  impact_type">Human Health Particulate Air</td>
+<td class="gt_row gt_left" headers="glass - mass_370  unit">kg PM2.5 eq.</td>
+<td class="gt_row gt_left" headers="glass - mass_370  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - mass_370  value">8.40000e-05</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - mass_370  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="glass - mass_370  unit">cancer (recommended)</td>
+<td class="gt_row gt_left" headers="glass - mass_370  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - mass_370  value">1.96000e-10</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - mass_370  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="glass - mass_370  unit">non-canc. (recommended)</td>
+<td class="gt_row gt_left" headers="glass - mass_370  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - mass_370  value">2.08000e-08</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - mass_370  impact_type">Ozone Depletion Air</td>
+<td class="gt_row gt_left" headers="glass - mass_370  unit">kg CFC 11 eq.</td>
+<td class="gt_row gt_left" headers="glass - mass_370  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - mass_370  value">1.38000e-15</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="glass - mass_370  impact_type">Resources</td>
+<td class="gt_row gt_left" headers="glass - mass_370  unit">Fossil fuels</td>
+<td class="gt_row gt_left" headers="glass - mass_370  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - mass_370  value">6.88000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="glass - mass_370  impact_type">Smog Air</td>
+<td class="gt_row gt_left" headers="glass - mass_370  unit">kg O3 eq.</td>
+<td class="gt_row gt_left" headers="glass - mass_370  process">total_impact</td>
+<td class="gt_row gt_right" headers="glass - mass_370  value">3.24000e-02</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="PET - base_scenario" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">PET - base_scenario</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="PET - base_scenario  impact_type">Acidification</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  unit">kg SO2 eq.</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - base_scenario  value">2.99000e-04</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - base_scenario  impact_type">Ecotoxicity (recommended)</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  unit">CTUe</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - base_scenario  value">5.08000e-02</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - base_scenario  impact_type">Eutrophication</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  unit">kg N eq.</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - base_scenario  value">5.58000e-05</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - base_scenario  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  unit">excl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - base_scenario  value">1.11000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - base_scenario  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  unit">incl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - base_scenario  value">1.11000e-01</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - base_scenario  impact_type">Human Health Particulate Air</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  unit">kg PM2.5 eq.</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - base_scenario  value">1.61000e-05</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - base_scenario  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  unit">cancer (recommended)</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - base_scenario  value">1.41000e-10</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - base_scenario  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  unit">non-canc. (recommended)</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - base_scenario  value">5.21000e-09</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - base_scenario  impact_type">Ozone Depletion Air</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  unit">kg CFC 11 eq.</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - base_scenario  value">3.31000e-07</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - base_scenario  impact_type">Resources</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  unit">Fossil fuels</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - base_scenario  value">2.99000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - base_scenario  impact_type">Smog Air</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  unit">kg O3 eq.</td>
+<td class="gt_row gt_left" headers="PET - base_scenario  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - base_scenario  value">4.43000e-03</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="PET - truck_0" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">PET - truck_0</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="PET - truck_0  impact_type">Acidification</td>
+<td class="gt_row gt_left" headers="PET - truck_0  unit">kg SO2 eq.</td>
+<td class="gt_row gt_left" headers="PET - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_0  value">2.99000e-04</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - truck_0  impact_type">Ecotoxicity (recommended)</td>
+<td class="gt_row gt_left" headers="PET - truck_0  unit">CTUe</td>
+<td class="gt_row gt_left" headers="PET - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_0  value">5.08000e-02</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - truck_0  impact_type">Eutrophication</td>
+<td class="gt_row gt_left" headers="PET - truck_0  unit">kg N eq.</td>
+<td class="gt_row gt_left" headers="PET - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_0  value">5.58000e-05</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - truck_0  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="PET - truck_0  unit">excl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="PET - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_0  value">1.11000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - truck_0  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="PET - truck_0  unit">incl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="PET - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_0  value">1.11000e-01</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - truck_0  impact_type">Human Health Particulate Air</td>
+<td class="gt_row gt_left" headers="PET - truck_0  unit">kg PM2.5 eq.</td>
+<td class="gt_row gt_left" headers="PET - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_0  value">1.62000e-05</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - truck_0  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="PET - truck_0  unit">cancer (recommended)</td>
+<td class="gt_row gt_left" headers="PET - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_0  value">1.40000e-10</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - truck_0  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="PET - truck_0  unit">non-canc. (recommended)</td>
+<td class="gt_row gt_left" headers="PET - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_0  value">5.19000e-09</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - truck_0  impact_type">Ozone Depletion Air</td>
+<td class="gt_row gt_left" headers="PET - truck_0  unit">kg CFC 11 eq.</td>
+<td class="gt_row gt_left" headers="PET - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_0  value">3.31000e-07</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - truck_0  impact_type">Resources</td>
+<td class="gt_row gt_left" headers="PET - truck_0  unit">Fossil fuels</td>
+<td class="gt_row gt_left" headers="PET - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_0  value">2.98000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - truck_0  impact_type">Smog Air</td>
+<td class="gt_row gt_left" headers="PET - truck_0  unit">kg O3 eq.</td>
+<td class="gt_row gt_left" headers="PET - truck_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_0  value">4.46000e-03</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="PET - truck_100" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">PET - truck_100</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="PET - truck_100  impact_type">Acidification</td>
+<td class="gt_row gt_left" headers="PET - truck_100  unit">kg SO2 eq.</td>
+<td class="gt_row gt_left" headers="PET - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_100  value">2.99000e-04</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - truck_100  impact_type">Ecotoxicity (recommended)</td>
+<td class="gt_row gt_left" headers="PET - truck_100  unit">CTUe</td>
+<td class="gt_row gt_left" headers="PET - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_100  value">5.09000e-02</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - truck_100  impact_type">Eutrophication</td>
+<td class="gt_row gt_left" headers="PET - truck_100  unit">kg N eq.</td>
+<td class="gt_row gt_left" headers="PET - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_100  value">5.59000e-05</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - truck_100  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="PET - truck_100  unit">excl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="PET - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_100  value">1.12000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - truck_100  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="PET - truck_100  unit">incl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="PET - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_100  value">1.12000e-01</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - truck_100  impact_type">Human Health Particulate Air</td>
+<td class="gt_row gt_left" headers="PET - truck_100  unit">kg PM2.5 eq.</td>
+<td class="gt_row gt_left" headers="PET - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_100  value">1.61000e-05</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - truck_100  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="PET - truck_100  unit">cancer (recommended)</td>
+<td class="gt_row gt_left" headers="PET - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_100  value">1.41000e-10</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - truck_100  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="PET - truck_100  unit">non-canc. (recommended)</td>
+<td class="gt_row gt_left" headers="PET - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_100  value">5.22000e-09</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - truck_100  impact_type">Ozone Depletion Air</td>
+<td class="gt_row gt_left" headers="PET - truck_100  unit">kg CFC 11 eq.</td>
+<td class="gt_row gt_left" headers="PET - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_100  value">3.31000e-07</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - truck_100  impact_type">Resources</td>
+<td class="gt_row gt_left" headers="PET - truck_100  unit">Fossil fuels</td>
+<td class="gt_row gt_left" headers="PET - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_100  value">3.00000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - truck_100  impact_type">Smog Air</td>
+<td class="gt_row gt_left" headers="PET - truck_100  unit">kg O3 eq.</td>
+<td class="gt_row gt_left" headers="PET - truck_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - truck_100  value">4.41000e-03</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="PET - recycling_0" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">PET - recycling_0</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="PET - recycling_0  impact_type">Acidification</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  unit">kg SO2 eq.</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_0  value">4.26000e-04</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - recycling_0  impact_type">Ecotoxicity (recommended)</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  unit">CTUe</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_0  value">8.86000e-02</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - recycling_0  impact_type">Eutrophication</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  unit">kg N eq.</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_0  value">4.58000e-05</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - recycling_0  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  unit">excl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_0  value">1.38000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - recycling_0  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  unit">incl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_0  value">1.37000e-01</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - recycling_0  impact_type">Human Health Particulate Air</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  unit">kg PM2.5 eq.</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_0  value">2.23000e-05</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - recycling_0  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  unit">cancer (recommended)</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_0  value">2.36000e-10</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - recycling_0  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  unit">non-canc. (recommended)</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_0  value">8.19000e-09</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - recycling_0  impact_type">Ozone Depletion Air</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  unit">kg CFC 11 eq.</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_0  value">5.89000e-07</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - recycling_0  impact_type">Resources</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  unit">Fossil fuels</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_0  value">4.32000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - recycling_0  impact_type">Smog Air</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  unit">kg O3 eq.</td>
+<td class="gt_row gt_left" headers="PET - recycling_0  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_0  value">6.23000e-03</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="PET - recycling_100" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">PET - recycling_100</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="PET - recycling_100  impact_type">Acidification</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  unit">kg SO2 eq.</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_100  value">1.72000e-04</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - recycling_100  impact_type">Ecotoxicity (recommended)</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  unit">CTUe</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_100  value">1.30000e-02</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - recycling_100  impact_type">Eutrophication</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  unit">kg N eq.</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_100  value">6.58000e-05</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - recycling_100  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  unit">excl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_100  value">8.51000e-02</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - recycling_100  impact_type">Global Warming Air</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  unit">incl. biogenic carbon</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_100  value">8.51000e-02</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - recycling_100  impact_type">Human Health Particulate Air</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  unit">kg PM2.5 eq.</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_100  value">9.93000e-06</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - recycling_100  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  unit">cancer (recommended)</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_100  value">4.48000e-11</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - recycling_100  impact_type">Human toxicity</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  unit">non-canc. (recommended)</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_100  value">2.22000e-09</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - recycling_100  impact_type">Ozone Depletion Air</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  unit">kg CFC 11 eq.</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_100  value">7.34000e-08</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="PET - recycling_100  impact_type">Resources</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  unit">Fossil fuels</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_100  value">1.66000e-01</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="PET - recycling_100  impact_type">Smog Air</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  unit">kg O3 eq.</td>
+<td class="gt_row gt_left" headers="PET - recycling_100  process">total_impact</td>
+<td class="gt_row gt_right" headers="PET - recycling_100  value">2.64000e-03</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">'total_impact'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum_total_impact =</span> <span class="fu">sum</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> container, <span class="at">y =</span> sum_total_impact, <span class="at">fill =</span> container)) <span class="sc">+</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>scenario) <span class="sc">+</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Sum of Total Impact"</span>,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Container Type"</span>,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Total Impact of All Scenarios"</span>) <span class="sc">+</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lca-data-cleaning_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">'total_impact'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum_total_impact =</span> <span class="fu">sum</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> scenario, <span class="at">y =</span> sum_total_impact, <span class="at">fill =</span> scenario)) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>container) <span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Sum of Total Impact"</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Container Type"</span>,</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Total Impact of All Scenarios"</span>) <span class="sc">+</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lca-data-cleaning_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">'total_impact'</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>         container <span class="sc">==</span> <span class="st">'glass'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum_total_impact =</span> <span class="fu">sum</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> container, <span class="at">y =</span> sum_total_impact, <span class="at">fill =</span> scenario)) <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Sum of Total Impact"</span>,</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Container Type"</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Total Impact of Glass by Scenario"</span>) <span class="sc">+</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lca-data-cleaning_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">'total_impact'</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>         container <span class="sc">==</span> <span class="st">'PET'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum_total_impact =</span> <span class="fu">sum</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> container, <span class="at">y =</span> sum_total_impact, <span class="at">fill =</span> scenario)) <span class="sc">+</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Sum of Total Impact"</span>,</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Container Type"</span>,</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Total Impact of PET by Scenario"</span>) <span class="sc">+</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lca-data-cleaning_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>containers <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(container, scenario) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(process <span class="sc">==</span> <span class="st">'total_impact'</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>         container <span class="sc">==</span> <span class="st">'aluminium'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sum_total_impact =</span> <span class="fu">sum</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> container, <span class="at">y =</span> sum_total_impact, <span class="at">fill =</span> scenario)) <span class="sc">+</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Sum of Total Impact"</span>,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Container Type"</span>,</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Total Impact of Aluminium by Scenario"</span>) <span class="sc">+</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lca-data-cleaning_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 
 </main>
