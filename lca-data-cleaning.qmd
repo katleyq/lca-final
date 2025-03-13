@@ -166,7 +166,7 @@ rm(glass_base_scen,glass_truck0, glass_truck100, glass_mass_370)
 # function to process glass data for different scenarios
 process_PET_data <- function(PET_sheet, row_range, scenario_name) {
   PET_sheet %>%
-    slice(2:13) %>%
+    slice(row_range) %>%
     select(`absolute_value`:x21) %>%
     mutate(row_id = row_number()) %>%
     mutate(

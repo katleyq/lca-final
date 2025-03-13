@@ -5,3 +5,96 @@ execute:
   message: false
 theme: lux
 ---
+
+```{r}
+library(tidyverse)
+library(here)
+library(gt)
+```
+
+```{r}
+containers <- read_csv(here("data/all_containers.csv"))
+```
+
+```{r}
+containers %>% 
+  group_by(container, scenario) %>% 
+  filter(process == 'total_impact') %>%
+  select(container, scenario, impact_type, unit, process, value) %>% 
+  gt() 
+```
+
+
+```{r}
+containers %>% 
+  group_by(container, scenario) %>% 
+  filter(process == 'total_impact') %>% 
+  summarize(sum_total_impact = sum(value, na.rm = TRUE)) %>% 
+  ggplot(aes(x = container, y = sum_total_impact, fill = container)) +
+  geom_col(position = "dodge") +
+  facet_wrap(~scenario) +
+  labs(y = "Sum of Total Impact",
+       x = "Container Type",
+       title = "Total Impact of All Scenarios") +
+  theme_bw()
+```
+```{r}
+containers %>% 
+  group_by(container, scenario) %>% 
+  filter(process == 'total_impact') %>% 
+  summarize(sum_total_impact = sum(value, na.rm = TRUE)) %>% 
+  ggplot(aes(x = scenario, y = sum_total_impact, fill = scenario)) +
+  geom_col(position = "dodge") +
+  facet_wrap(~container) +
+  labs(y = "Sum of Total Impact",
+       x = "Container Type",
+       title = "Total Impact of All Scenarios") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+
+```{r}
+containers %>% 
+  group_by(container, scenario) %>% 
+  filter(process == 'total_impact',
+         container == 'glass') %>% 
+  summarize(sum_total_impact = sum(value, na.rm = TRUE)) %>% 
+  ggplot(aes(x = container, y = sum_total_impact, fill = scenario)) +
+  geom_col(position = "dodge") +
+  labs(y = "Sum of Total Impact",
+       x = "Container Type",
+       title = "Total Impact of Glass by Scenario") +
+  theme_bw()
+```
+
+```{r}
+containers %>% 
+  group_by(container, scenario) %>% 
+  filter(process == 'total_impact',
+         container == 'PET') %>% 
+  summarize(sum_total_impact = sum(value, na.rm = TRUE)) %>% 
+  ggplot(aes(x = container, y = sum_total_impact, fill = scenario)) +
+  geom_col(position = "dodge") +
+  labs(y = "Sum of Total Impact",
+       x = "Container Type",
+       title = "Total Impact of PET by Scenario") +
+  theme_bw()
+```
+
+
+```{r}
+containers %>% 
+  group_by(container, scenario) %>% 
+  filter(process == 'total_impact',
+         container == 'aluminium') %>% 
+  summarize(sum_total_impact = sum(value, na.rm = TRUE)) %>% 
+  ggplot(aes(x = container, y = sum_total_impact, fill = scenario)) +
+  geom_col(position = "dodge") +
+  labs(y = "Sum of Total Impact",
+       x = "Container Type",
+       title = "Total Impact of Aluminium by Scenario") +
+  theme_bw()
+```
+
