@@ -323,6 +323,7 @@ containers %>%
        title = "Total Impact of All Scenarios") +
   theme_bw()
 ```
+
 ```{r}
 containers %>% 
   group_by(container, scenario) %>% 
@@ -457,7 +458,8 @@ containers %>%
 containers %>% 
   filter(scenario == "base_scenario") %>% 
   group_by(impact_type, life_cycle) %>%
-  filter(container == "aluminium") %>%
+  filter(container == "aluminium",
+         life_cycle != "total_impact") %>%
   summarize(impact_sum = sum(value, na.rm = TRUE))%>%
   pivot_wider(
     names_from = life_cycle,
@@ -477,7 +479,8 @@ containers %>%
 containers %>% 
   filter(scenario == "base_scenario") %>% 
   group_by(impact_type, life_cycle) %>%
-  filter(container == "PET") %>%
+  filter(container == "PET",
+         life_cycle != "total_impact") %>%
   summarize(impact_sum = sum(value, na.rm = TRUE))%>%
   pivot_wider(
     names_from = life_cycle,
@@ -497,7 +500,8 @@ containers %>%
 containers %>% 
   filter(scenario == "base_scenario") %>% 
   group_by(impact_type, life_cycle) %>%
-  filter(container == "glass") %>%
+  filter(container == "glass",
+         life_cycle != "total_impact") %>%
   summarize(impact_sum = sum(value, na.rm = TRUE))%>%
   pivot_wider(
     names_from = life_cycle,
