@@ -17,17 +17,243 @@ library(janitor)
 
 # set up URL
 source("R/url.R")
+
+# pull in aluminium data 
+aluminium_sheet <- read_sheet(sheet_id, sheet = "Aluminium") %>% 
+  clean_names()
+
+glass_sheet <- read_sheet(sheet_id, sheet = "GlassBottle") %>% 
+  clean_names()
+
+PET_sheet <- read_sheet(sheet_id, sheet = "PET_Bottle") %>% 
+  clean_names()
 ```
 
 ## Aluminum container wrangling
 
 ```{r}
+# function for wrangling aluminium scenario
+process_aluminum_scenario <- function(data_sheet, row_range, scenario_name) {
+  data_sheet %>%
+    slice(row_range) %>%
+    select(x4:x20) %>%
+    mutate(row_id = row_number()) %>%
+    mutate(across(x4:x20,
+                 ~if_else(row_id == 1 & . == "NULL",
+                          "Total_Impact", as.character(.)))) %>%
+    select(-row_id) %>%
+    {
+      df <- .
+      colnames(df) <- as.character(unlist(df[1, ]))
+      df[-1, ]
+    } %>%
+    janitor::clean_names(allow_dupes = FALSE) %>%
+    rename(impact_category = 1) %>%
+    pivot_longer(
+      cols = -impact_category,
+      names_to = "process",
+      values_to = "value"
+    ) %>%
+    filter(!is.na(value)) %>%
+    mutate(
+      value = as.numeric(str_replace_all(value, "NULL", NA_character_))
+    ) %>%
+    separate(impact_category,
+             into = c("impact_method", "impact_type", "unit"),
+             sep = ", |\\[|\\]",
+             fill = "right") %>%
+    mutate(
+      unit = str_trim(unit),
+      unit = str_remove(unit, "\\]$")
+    ) %>%
+    mutate(scenario = scenario_name, ,
+           container = "aluminium")
+}
+
+# pull in aluminium data 
+aluminium_sheet <- read_sheet(sheet_id, sheet = "Aluminium") %>%
+  clean_names()
+
+# process each scenario
+alum_base_scen <- process_aluminum_scenario(aluminium_sheet, 3:14, "base_scenario")
+alum_truck0 <- process_aluminum_scenario(aluminium_sheet, 35:46, "truck_0")
+alum_truck100 <- process_aluminum_scenario(aluminium_sheet, 67:78, "truck_100") 
+alum_recycling0 <- process_aluminum_scenario(aluminium_sheet, 98:109, "recycling_0")
+alum_recycling100 <- process_aluminum_scenario(aluminium_sheet, 130:141, "recycling_100")
+
+# combine scenarios
+alum_clean <- rbind(alum_base_scen,
+                   alum_truck0,
+                   alum_truck100,
+                   alum_recycling0,
+                   alum_recycling100)
+
+# remove intermediate df
+rm(alum_base_scen, alum_truck0, alum_truck100, alum_recycling0, alum_recycling100)
+```
+
+
+
+
+## Glass container wrangling
+
+```{r}
+# function to process glass data for different scenarios
+process_glass_data <- function(glass_sheet, row_range, scenario_name) {
+  glass_sheet %>%
+    slice(row_range) %>%
+    select(x4:x19) %>%
+    mutate(row_id = row_number()) %>%
+    mutate(across(x4:x19,
+                  ~if_else(row_id == 1 & . == "NULL",
+                           "Total_Impact", as.character(.)))) %>%
+    select(-row_id) %>%
+    {
+      df <- .
+      colnames(df) <- as.character(unlist(df[1, ]))
+      df[-1, ]
+    } %>%
+    janitor::clean_names(allow_dupes = FALSE) %>%
+    rename(impact_category = 1) %>%
+    pivot_longer(
+      cols = -impact_category,
+      names_to = "process",
+      values_to = "value"
+    ) %>%
+    filter(!is.na(value)) %>%
+    mutate(
+      value = as.numeric(str_replace_all(value, "NULL", NA_character_))
+    ) %>%
+    separate(impact_category,
+             into = c("impact_method", "impact_type", "unit"),
+             sep = ", |\\[|\\]",
+             fill = "right") %>%
+    mutate(
+      unit = str_trim(unit),
+      unit = str_remove(unit, "\\]$")
+    ) %>%
+    mutate(scenario = scenario_name,
+           container = "glass")
+}
+
+# Use the function to process each scenario
+glass_base_scen <- process_glass_data(glass_sheet, 4:15, "base_scenario")
+glass_truck0 <- process_glass_data(glass_sheet, 36:47, 
+                                   "truck_0")
+glass_truck100 <- process_glass_data(glass_sheet, 74:85, 
+                                     "truck_100")
+glass_mass_370 <- process_glass_data(glass_sheet, 110:121,
+                                     "mass_370")
+
+# combine
+glass_clean <- rbind(
+  glass_base_scen,
+  glass_truck0,
+  glass_truck100,
+  glass_mass_370
+)
+
+rm(glass_base_scen,glass_truck0, glass_truck100, glass_mass_370)
+```
+
+## PET bottle wrangling
+
+```{r}
+# function to process glass data for different scenarios
+process_PET_data <- function(PET_sheet, row_range, scenario_name) {
+  PET_sheet %>%
+    slice(2:13) %>%
+    select(`absolute_value`:x21) %>%
+    mutate(row_id = row_number()) %>%
+    mutate(
+        absolute_value = if_else(row_id == 1, 
+                                "impact_category", 
+                                as.character(absolute_value)),
+        x2 = if_else(row_id == 1, 
+                            "total_impact", 
+                            as.character(x2))) %>%
+    select(-row_id) %>%
+    {
+      df <- .
+      colnames(df) <- as.character(unlist(df[1, ]))
+      df[-1, ]
+    } %>% 
+     janitor::clean_names(allow_dupes = FALSE) %>%
+  mutate(across(everything(), ~if(is.list(.x)) as.character(.x) else .x)) %>%
+     pivot_longer(
+       cols = -`impact_category`,
+       names_to = "process",
+       values_to = "value"
+     ) %>%
+     filter(!is.na(value)) %>%
+     mutate(
+       value = as.numeric(str_replace_all(value, "NULL", NA_character_))
+     ) %>%
+     separate(impact_category,
+              into = c("impact_method", "impact_type", "unit"),
+              sep = ", |\\[|\\]",
+              fill = "right") %>%
+     mutate(
+       unit = str_trim(unit),
+       unit = str_remove(unit, "\\]$")
+     ) %>%
+    mutate(scenario = scenario_name,
+           container = "PET")
+}
+
+# Use the function to process each scenario
+PET_base_scen <- process_PET_data(PET_sheet, 2:13, "base_scenario")
+PET_truck0 <- process_PET_data(PET_sheet, 34:45, 
+                                   "truck_0")
+PET_truck100 <- process_PET_data(PET_sheet, 51:62, 
+                                     "truck_100")
+PET_recycling0 <- process_PET_data(PET_sheet, 68:79, 
+                                     "recycling_0")
+PET_recycling100 <- process_PET_data(PET_sheet, 84:95, 
+                                     "recycling_100")
+
+# combine
+PET_clean <- rbind(
+  PET_base_scen,
+  PET_truck0,
+  PET_truck100,
+  PET_recycling0,
+  PET_recycling100
+)
+
+# remove intermediates
+rm(PET_base_scen,
+  PET_truck0,
+  PET_truck100,
+  PET_recycling0,
+  PET_recycling100)
+```
+
+
+## Combining containers
+```{r}
+all_containers <- rbind(alum_clean,
+                        glass_clean,
+                        PET_clean)
+```
+
+## Save data
+
+```{r}
+write_csv(all_containers, "data/all_containers.csv")
+```
+
+
+## scratch space
+
+alum
+```{r}
 # pull in aluminium data 
 aluminium_sheet <- read_sheet(sheet_id, sheet = "Aluminium") %>% 
   clean_names()
 
-# Set up baseline scenario absolute values
-base_scen_alum <- aluminium_sheet %>% 
+# set up baseline scenario absolute values
+alum_base_scen <- aluminium_sheet %>% 
   slice(3:14) %>%
   select(x4:x20) %>%
   mutate(row_id = row_number()) %>%
@@ -39,10 +265,30 @@ base_scen_alum <- aluminium_sheet %>%
     df <- .
     colnames(df) <- as.character(unlist(df[1, ]))
     df[-1, ]
-  }
+  } %>%
+  janitor::clean_names(allow_dupes = FALSE) %>%
+  rename(impact_category = 1) %>%
+  pivot_longer(
+    cols = -impact_category,
+    names_to = "process",
+    values_to = "value"   
+  ) %>%
+  filter(!is.na(value)) %>%
+  mutate(
+    value = as.numeric(str_replace_all(value, "NULL", NA_character_))
+  ) %>%
+  separate(impact_category, 
+           into = c("impact_method", "impact_type", "unit"), 
+           sep = ", |\\[|\\]",
+           fill = "right") %>%
+  mutate(
+    unit = str_trim(unit),
+    unit = str_remove(unit, "\\]$")
+  ) %>% 
+  mutate(scenario = "base_scenario")
 
-# Set up truck_0 scenario absolute values
-truck0_alum <- aluminium_sheet %>% 
+# set up truck_0 scenario absolute values
+alum_truck0 <- aluminium_sheet %>% 
   slice(35:46) %>%
   select(x4:x20) %>%
   mutate(row_id = row_number()) %>%
@@ -54,11 +300,31 @@ truck0_alum <- aluminium_sheet %>%
     df <- .
     colnames(df) <- as.character(unlist(df[1, ]))
     df[-1, ]
-  }
+  } %>%
+  janitor::clean_names(allow_dupes = FALSE) %>%
+  rename(impact_category = 1) %>%
+  pivot_longer(
+    cols = -impact_category,
+    names_to = "process",
+    values_to = "value"   
+  ) %>%
+  filter(!is.na(value)) %>%
+  mutate(
+    value = as.numeric(str_replace_all(value, "NULL", NA_character_))
+  ) %>%
+  separate(impact_category, 
+           into = c("impact_method", "impact_type", "unit"), 
+           sep = ", |\\[|\\]",
+           fill = "right") %>%
+  mutate(
+    unit = str_trim(unit),
+    unit = str_remove(unit, "\\]$")
+  ) %>% 
+  mutate(scenario = "truck_0")
 
-# Set up truck_100 scenario absolute values
-truck100_alum <- aluminium_sheet %>% 
-  slice(35:46) %>%
+# set up truck_100 scenario absolute values
+alum_truck100 <- aluminium_sheet %>% 
+  slice(66:78) %>%
   select(x4:x20) %>%
   mutate(row_id = row_number()) %>%
   mutate(across(x4:x20, 
@@ -69,11 +335,31 @@ truck100_alum <- aluminium_sheet %>%
     df <- .
     colnames(df) <- as.character(unlist(df[1, ]))
     df[-1, ]
-  }
+  } %>%
+  janitor::clean_names(allow_dupes = FALSE) %>%
+  rename(impact_category = 1) %>%
+  pivot_longer(
+    cols = -impact_category,
+    names_to = "process",
+    values_to = "value"   
+  ) %>%
+  filter(!is.na(value)) %>%
+  mutate(
+    value = as.numeric(str_replace_all(value, "NULL", NA_character_))
+  ) %>%
+  separate(impact_category, 
+           into = c("impact_method", "impact_type", "unit"), 
+           sep = ", |\\[|\\]",
+           fill = "right") %>%
+  mutate(
+    unit = str_trim(unit),
+    unit = str_remove(unit, "\\]$")
+  ) %>% 
+  mutate(scenario = "truck_100")
 
 
-# Set up recycling_0 scenario absolute values
-recycling0_alum <- aluminium_sheet %>% 
+# set up recycling_0 scenario absolute values
+alum_recycling0 <- aluminium_sheet %>% 
   slice(98:109) %>%
   select(x4:x20) %>%
   mutate(row_id = row_number()) %>%
@@ -85,11 +371,31 @@ recycling0_alum <- aluminium_sheet %>%
     df <- .
     colnames(df) <- as.character(unlist(df[1, ]))
     df[-1, ]
-  }
+  } %>%
+  janitor::clean_names(allow_dupes = FALSE) %>%
+  rename(impact_category = 1) %>%
+  pivot_longer(
+    cols = -impact_category,
+    names_to = "process",
+    values_to = "value"   
+  ) %>%
+  filter(!is.na(value)) %>%
+  mutate(
+    value = as.numeric(str_replace_all(value, "NULL", NA_character_))
+  ) %>%
+  separate(impact_category, 
+           into = c("impact_method", "impact_type", "unit"), 
+           sep = ", |\\[|\\]",
+           fill = "right") %>%
+  mutate(
+    unit = str_trim(unit),
+    unit = str_remove(unit, "\\]$")
+  ) %>% 
+  mutate(scenario = "recycling_0")
 
 
-# Set up recycling_100 scenario absolute values
-recycling100_alum <- aluminium_sheet %>% 
+# set up recycling_100 scenario absolute values
+alum_recycling100 <- aluminium_sheet %>% 
   slice(130:141) %>%
   select(x4:x20) %>%
   mutate(row_id = row_number()) %>%
@@ -101,18 +407,187 @@ recycling100_alum <- aluminium_sheet %>%
     df <- .
     colnames(df) <- as.character(unlist(df[1, ]))
     df[-1, ]
-  }
+  } %>%
+  janitor::clean_names(allow_dupes = FALSE) %>%
+  rename(impact_category = 1) %>%
+  pivot_longer(
+    cols = -impact_category,
+    names_to = "process",
+    values_to = "value"   
+  ) %>%
+  filter(!is.na(value)) %>%
+  mutate(
+    value = as.numeric(str_replace_all(value, "NULL", NA_character_))
+  ) %>%
+  separate(impact_category, 
+           into = c("impact_method", "impact_type", "unit"), 
+           sep = ", |\\[|\\]",
+           fill = "right") %>%
+  mutate(
+    unit = str_trim(unit),
+    unit = str_remove(unit, "\\]$")
+  ) %>% 
+  mutate(scenario = "recycling_100")
 
+
+# combine scenarios
+alum_clean <- rbind(alum_base_scen,
+                    alum_truck0,
+                    alum_truck100,
+                    alum_recycling0,
+                    alum_recycling100)
 ```
 
-
-## Glass container wrangling
-
+glass
 ```{r}
+# pull in glass data 
+glass_sheet <- read_sheet(sheet_id, sheet = "GlassBottle") %>% 
+  clean_names()
+
+# set up baseline scenario absolute values
+glass_base_scen <- glass_sheet %>% 
+  slice(4:15) %>%
+  select(x4:x19) %>%
+  mutate(row_id = row_number()) %>%
+  mutate(across(x4:x19, 
+                ~if_else(row_id == 1 & . == "NULL", 
+                         "Total_Impact", as.character(.)))) %>%
+  select(-row_id) %>%   
+  {
+    df <- .
+    colnames(df) <- as.character(unlist(df[1, ]))
+    df[-1, ]
+  } %>%
+  janitor::clean_names(allow_dupes = FALSE) %>%
+  rename(impact_category = 1) %>%
+  pivot_longer(
+    cols = -impact_category,
+    names_to = "process",
+    values_to = "value"   
+  ) %>%
+  filter(!is.na(value)) %>%
+  mutate(
+    value = as.numeric(str_replace_all(value, "NULL", NA_character_))
+  ) %>%
+  separate(impact_category, 
+           into = c("impact_method", "impact_type", "unit"), 
+           sep = ", |\\[|\\]",
+           fill = "right") %>%
+  mutate(
+    unit = str_trim(unit),
+    unit = str_remove(unit, "\\]$")
+  ) %>% 
+  mutate(scenario = "base_scenario")
+
+# set up truck_0 scenario absolute values
+glass_truck0 <- glass_sheet %>% 
+  slice(36:47) %>%
+  select(x4:x19) %>%
+  mutate(row_id = row_number()) %>%
+  mutate(across(x4:x19, 
+                ~if_else(row_id == 1 & . == "NULL", 
+                         "Total_Impact", as.character(.)))) %>%
+  select(-row_id) %>%   
+  {
+    df <- .
+    colnames(df) <- as.character(unlist(df[1, ]))
+    df[-1, ]
+  } %>%
+  janitor::clean_names(allow_dupes = FALSE) %>%
+  rename(impact_category = 1) %>%
+  pivot_longer(
+    cols = -impact_category,
+    names_to = "process",
+    values_to = "value"   
+  ) %>%
+  filter(!is.na(value)) %>%
+  mutate(
+    value = as.numeric(str_replace_all(value, "NULL", NA_character_))
+  ) %>%
+  separate(impact_category, 
+           into = c("impact_method", "impact_type", "unit"), 
+           sep = ", |\\[|\\]",
+           fill = "right") %>%
+  mutate(
+    unit = str_trim(unit),
+    unit = str_remove(unit, "\\]$")
+  ) %>% 
+  mutate(scenario = "truck_0")
+
+# set up truck_100 scenario absolute values
+glass_truck100 <- glass_sheet %>% 
+  slice(74:85) %>%
+  select(x4:x19) %>%
+  mutate(row_id = row_number()) %>%
+  mutate(across(x4:x19, 
+                ~if_else(row_id == 1 & . == "NULL", 
+                         "Total_Impact", as.character(.)))) %>%
+  select(-row_id) %>%   
+  {
+    df <- .
+    colnames(df) <- as.character(unlist(df[1, ]))
+    df[-1, ]
+  } %>%
+  janitor::clean_names(allow_dupes = FALSE) %>%
+  rename(impact_category = 1) %>%
+  pivot_longer(
+    cols = -impact_category,
+    names_to = "process",
+    values_to = "value"   
+  ) %>%
+  filter(!is.na(value)) %>%
+  mutate(
+    value = as.numeric(str_replace_all(value, "NULL", NA_character_))
+  ) %>%
+  separate(impact_category, 
+           into = c("impact_method", "impact_type", "unit"), 
+           sep = ", |\\[|\\]",
+           fill = "right") %>%
+  mutate(
+    unit = str_trim(unit),
+    unit = str_remove(unit, "\\]$")
+  ) %>% 
+  mutate(scenario = "truck_100")
+
+
+# set up bottle_mass_370 scenario absolute values
+glass_mass_370 <- glass_sheet %>% 
+  slice(110:121) %>%
+  select(x4:x19) %>%
+  mutate(row_id = row_number()) %>%
+  mutate(across(x4:x19, 
+                ~if_else(row_id == 1 & . == "NULL", 
+                         "Total_Impact", as.character(.)))) %>%
+  select(-row_id) %>%   
+  {
+    df <- .
+    colnames(df) <- as.character(unlist(df[1, ]))
+    df[-1, ]
+  } %>%
+  janitor::clean_names(allow_dupes = FALSE) %>%
+  rename(impact_category = 1) %>%
+  pivot_longer(
+    cols = -impact_category,
+    names_to = "process",
+    values_to = "value"   
+  ) %>%
+  filter(!is.na(value)) %>%
+  mutate(
+    value = as.numeric(str_replace_all(value, "NULL", NA_character_))
+  ) %>%
+  separate(impact_category, 
+           into = c("impact_method", "impact_type", "unit"), 
+           sep = ", |\\[|\\]",
+           fill = "right") %>%
+  mutate(
+    unit = str_trim(unit),
+    unit = str_remove(unit, "\\]$")
+  ) %>% 
+  mutate(scenario = "mass_370")
+
+
 
 ```
-
-
 
 
 
