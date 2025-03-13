@@ -249,26 +249,40 @@ rm(PET_base_scen,
 
 ```{r}
 # combine containers
-all_containers <- rbind(alum_clean,
-                       glass_clean,
-                       PET_clean)
-
 # all_containers <- rbind(alum_clean,
-#                         glass_clean,
-#                         PET_clean) %>% 
-#   select(container, scenario, impact_method, impact_type, unit, process, value) %>% 
-#   mutate(life_cycle = case_when(
-#     process == "fake_process" ~ "production",
-#     process == "fake_process" ~ "production",
-#     process == "fake_process" ~ "production",
-#     process == "fake_process" ~ "production",
-#     process == "fake_process" ~ "production",
-#     process == "fake_process" ~ "production",
-#     process == "fake_process" ~ "production",
-#     process == "fake_process" ~ "production",
-#     process == "total_impact" ~ "total_impact",
-#     TRUE ~ NA_character_
-#   ))
+#                        glass_clean,
+#                        PET_clean)
+
+all_containers <- rbind(alum_clean,
+                        glass_clean,
+                        PET_clean) %>%
+  select(container, scenario, impact_method, impact_type, unit, process, value) %>%
+  mutate(life_cycle = case_when(
+    process == "total_impact" ~ "total_impact",
+    process == "eu_28_ferro_metals_on_landfill_ts" ~ "end-of-life",
+    process == "eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium" ~ "production",
+    process == "eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2" ~ "end-of-life",
+    process == "eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg" ~ "end-of-life",
+    process == "eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg" ~ "production",
+    process == "glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so" ~ "transportation",
+    process == "	glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so" ~ "transportation",
+    process == "glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2" ~ "transportation",
+    process == "glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so" ~ "transportation",
+    process == "us_diesel_mix_at_refinery_ts" ~ "transportation",
+    process == "us_electricity_grid_mix_ts" ~ "production",
+    process == "eu_28_container_glass_ts_p_agg" ~ "production",
+    process == "eu_28_inert_matter_glass_on_landfill_ts" ~ "end-of-life",
+    process == "glo_steel_tinplated_worldsteel" ~ "production",
+    process == "glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so_2" ~ "transportation",
+    process == "us_lubricants_at_refinery_ts" ~ "production",
+    process == "pet_bottle_recycling_lc" ~ "end-of-life",
+    process == "eu_28_plastic_waste_on_landfill_ts" ~ "end-of-life",
+    process == "eu_28_process_water_ts" ~ "production",
+    process == "rer_polyethylene_terephthalate_granulate_bottle_grade_at_plant_plastics_europe" ~ "production",
+    process == "rer_polyethylene_terephthalate_granulate_bottle_grade_at_plant_plastics_europe_2" ~ "end-of-life",
+    process == "rer_polypropylene_granulate_pp_elcd_plastics_europe_p_agg" ~ "production",
+    TRUE ~ NA_character_)
+    )
 ```
 
 
@@ -371,3 +385,18 @@ containers %>%
        title = "Total Impact of Aluminium by Scenario") +
   theme_bw()
 ```
+```{r}
+containers %>% 
+  group_by(container, scenario, life_cycle) %>% 
+  summarize(sum_total_impact = sum(value, na.rm = TRUE)) %>% 
+  filter(life_cycle != "total_impact") %>% 
+  ggplot(aes(x = scenario, y = sum_total_impact, fill = life_cycle)) +
+  geom_col(position = "dodge") +
+  labs(y = "Sum of Total Impact",
+       x = "Scenario",
+       title = "Total Impact of All Scenarios") +
+  facet_wrap(~container) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
