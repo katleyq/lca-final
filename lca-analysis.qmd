@@ -22,7 +22,6 @@ library(googlesheets4)
 library(janitor)
 ```
 
-
 Connect to google sheets
 
 ```{r}
@@ -249,7 +248,6 @@ rm(PET_base_scen,
 # process_list = data.frame(unique(all_containers$process))
 ```
 
-
 ```{r}
 # combine containers
 # all_containers <- rbind(alum_clean,
@@ -290,7 +288,6 @@ all_containers <- rbind(alum_clean,
     )
 ```
 
-
 ## Save data
 
 ```{r}
@@ -323,7 +320,6 @@ containers %>%
   theme_bw()
 ```
 
-
 ```{r}
 containers %>% 
   group_by(container, scenario) %>% 
@@ -353,7 +349,6 @@ containers %>%
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-
 ```{r}
 containers %>% 
   group_by(container, scenario) %>% 
@@ -382,7 +377,6 @@ containers %>%
   theme_bw()
 ```
 
-
 ```{r}
 containers %>% 
   group_by(container, scenario) %>% 
@@ -410,6 +404,7 @@ containers %>%
   theme_bw() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
+
 ```{r}
 containers %>% 
   filter(scenario == "recycling_100") %>% 
@@ -501,6 +496,7 @@ containers %>%
 ```
 
 ## Contribution Analysis Results Table
+
 ```{r}
 containers %>% 
   filter(scenario == "base_scenario") %>% 
@@ -564,3 +560,80 @@ containers %>%
   )
 ```
 
+## O.P. Comparative results
+
+```{r}
+# Combine Impact type and Unit into a single column
+containers$impact_category = paste(containers$impact_type, containers$unit, sep=" ")
+
+# create a dataframe with impact categories by container for the total life cycle 
+total_impact_comparison <- containers %>% 
+  filter(scenario == "base_scenario",
+         life_cycle == "total_impact") %>% 
+  pivot_wider(
+    names_from = container,
+    values_from = value
+  ) %>% 
+select(scenario, impact_method, impact_type, impact_category, life_cycle, glass, aluminium, PET)
+
+total_impact_comparison %>%
+  gt() %>%
+  tab_header(title = "Total Impact Comparison By Impact Category") %>%
+  fmt_number(
+    columns = where(is.numeric),  # Format all numeric columns
+    n_sigfig = 3  # Show 3 significant figures for readability
+  )
+
+# normalize pet and aluminum elementary outputs against glass bottle values
+total_impact_comparison$glass_normalized <-
+total_impact_comparison$glass/total_impact_comparison$glass
+
+total_impact_comparison$aluminium_normalized <-
+total_impact_comparison$aluminium/total_impact_comparison$glass
+
+total_impact_comparison$PET_normalized <-
+total_impact_comparison$PET/total_impact_comparison$glass
+
+# transform the dataframe into a long format
+total_impact_comparison_long <- total_impact_comparison %>%
+pivot_longer(cols = c(glass_normalized, aluminium_normalized,  PET_normalized),
+               names_to = "container",
+               values_to = "normalized_value")%>% 
+filter(impact_category != 'Ozone Depletion Air kg CFC 11 eq.')
+```
+
+```{r}
+baseline_p <- ggplot(total_impact_comparison_long, aes(x = impact_type, y = normalized_value, fill = container)) +
+  geom_col(position = "dodge") +  
+  scale_x_discrete(guide = guide_axis(angle = 45)) +
+  scale_y_continuous(
+    limits = c(0, 3.0),  
+    breaks = seq(0, 3.0, by = 0.3),  
+    expand = expansion(mult = c(0, 0)),
+    position = "left"
+  ) +
+  labs(title = "Environmental Impact by Container",
+       x = "Impact Category",
+       y = "Normalized Value",
+       fill = "Container") +
+  theme_minimal() +
+  theme(
+      panel.grid.major.x = element_blank(),
+      panel.grid.minor.x = element_blank(), 
+      panel.grid.minor.y = element_blank(),
+      panel.background = element_rect(fill = "white", color = NA),
+      axis.line = element_line(color = "grey"),
+      plot.margin = margin(5, 5, 5, 5),
+      plot.title = element_text(margin = margin(b = 5)),
+      legend.margin = margin(0, 0, 0, 10),
+      aspect.ratio = 0.4,
+      axis.title.y = element_text(margin = margin(r = 5)),
+      axis.title.x = element_text(margin = margin(t = 5))
+  )
+
+baseline_p
+
+ggsave(filename = "baseline_comparison.png", plot = baseline_p, 
+       width = 8, height = 4, dpi = 300, 
+       units = "in") 
+```
