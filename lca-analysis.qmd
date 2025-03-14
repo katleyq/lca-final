@@ -309,6 +309,20 @@ containers %>%
   gt() 
 ```
 
+```{r}
+containers %>% 
+  group_by(container, scenario) %>% 
+  filter(process == 'total_impact') %>% 
+  #summarize(sum_total_impact = sum(value, na.rm = TRUE)) %>% 
+  ggplot(aes(x = container, y = value, fill = container)) +
+  geom_col(position = "dodge") +
+  facet_wrap(~scenario) +
+  labs(y = "Total Impact",
+       x = "Container Type",
+       title = "Total Impact of All Scenarios") +
+  theme_bw()
+```
+
 
 ```{r}
 containers %>% 
@@ -338,7 +352,6 @@ containers %>%
   theme_bw() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
-
 
 
 ```{r}
@@ -438,6 +451,7 @@ containers %>%
   theme_bw() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
+
 ```{r}
 containers %>% 
   filter(scenario == "truck_100") %>% 
@@ -452,6 +466,39 @@ containers %>%
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
+```{r}
+containers %>% 
+  group_by(container, scenario, life_cycle) %>% 
+  summarize(sum_total_impact = sum(value, na.rm = TRUE)) %>% 
+  filter(life_cycle != "total_impact") %>% 
+  ggplot(aes(x = scenario, y = sum_total_impact, 
+             fill = container)) +
+  geom_col(position = "dodge") +
+  labs(y = "Total Impact",
+       x = "Scenario",
+       title = "Total Impact of All Scenarios") +
+  facet_wrap(~life_cycle) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+```{r}
+containers %>% 
+  filter(scenario == "base_scenario") %>% 
+  group_by(container, impact_type, life_cycle) %>% 
+  #summarize(sum_total_impact = sum(value, na.rm = TRUE)) %>% 
+  filter(life_cycle != "total_impact") %>% 
+  ggplot(aes(x = impact_type, y = value, 
+             fill = container)) +
+  geom_col(position = "dodge") +
+  labs(y = "Total Impact",
+       x = "Impacy Category",
+       title = "Total Impact of All Categories across Life Cycle Stages",
+       subtitle = "Baseline Scenario") +
+  facet_wrap(~life_cycle) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
 
 ## Contribution Analysis Results Table
 ```{r}
