@@ -637,3 +637,29 @@ ggsave(filename = "baseline_comparison.png", plot = baseline_p,
        width = 8, height = 4, dpi = 300, 
        units = "in") 
 ```
+
+```{r}
+containers %>% 
+  group_by(impact_category, life_cycle, scenario) %>% 
+  filter(life_cycle != "total_impact",
+         impact_category == "Global Warming Air excl. biogenic carbon") %>% 
+  summarize(sum_impact = sum(value, na.rm = TRUE)) %>% 
+  ggplot(aes(x = scenario, y= sum_impact, fill = life_cycle)) +
+  geom_col(position = "dodge") +
+  facet_grid(~impact_category) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+```{r}
+containers %>% 
+  group_by(impact_category, life_cycle, scenario) %>% 
+  filter(life_cycle != "total_impact",
+         impact_category == "Ecotoxicity (recommended) CTUe") %>% 
+  summarize(sum_impact = sum(value, na.rm = TRUE)) %>% 
+  ggplot(aes(x = scenario, y= sum_impact, fill = life_cycle)) +
+  geom_col(position = "dodge") +
+  facet_grid(~impact_category) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
