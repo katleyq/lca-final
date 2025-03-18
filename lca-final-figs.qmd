@@ -1,25 +1,125 @@
 ---
 title: "LCA - Final Figures"
-format: html
+format: 
+  html:
+    code-fold: true
+    theme: lux
+    embed-resources: true
+execute:
+  warning: false
+  message: false
 ---
 
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
 ```{r}
-1 + 1
+library(tidyverse)
+library(here)
+library(gt)
 ```
 
-You can add options to executable code like this
-
 ```{r}
-#| echo: false
-2 * 2
+containers <- read_csv(here("data/all_containers.csv")) %>%
+  mutate(impact_type = case_when(
+    impact_type == "Ecotoxicity (recommended)" ~ "Ecotoxicity",
+    impact_type == "Ozone Depletion Air" ~ "Ozone Depletion",
+    impact_type == "Human Health Particulate Air" ~ "Particulate Air",
+    TRUE ~ impact_type
+  ))
+
+normalized_total_impact <- read_csv(here("data/normalized_total_impact.csv")) %>%
+  mutate(impact_type = case_when(
+    impact_type == "Ecotoxicity (recommended)" ~ "Ecotoxicity",
+    impact_type == "Ozone Depletion Air" ~ "Ozone Depletion",
+    impact_type == "Human Health Particulate Air" ~ "Particulate Air",
+    TRUE ~ impact_type
+  ))
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+# Sensitivity Analysis of Scenarios
+
+```{r}
+containers %>% 
+  filter(container == "aluminium",
+         process == "total_impact") %>% 
+  group_by(scenario, impact_type) %>%
+  ggplot(aes(x = scenario, y = value, fill = scenario)) +
+  geom_bar(stat="identity", position = "dodge") +
+  labs(y = "Total Impact",
+       x = "Scenario",
+       title = "Aluminium",
+       subtitle = "Sensitivity Analysis by Impact Category") +
+  theme_bw() +
+  facet_wrap(~impact_type, scales = "free_y") +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+```{r}
+containers %>% 
+  filter(container == "PET",
+         process == "total_impact") %>% 
+  group_by(scenario, impact_type) %>%
+  ggplot(aes(x = scenario, y = value, fill = scenario)) +
+  geom_bar(stat="identity", position = "dodge") +
+  labs(y = "Total Impact",
+       x = "Scenario",
+       title = "PET",
+       subtitle = "Sensitivity Analysis by Impact Category") +
+  theme_bw() +
+  facet_wrap(~impact_type, scales = "free_y") +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+```{r}
+containers %>% 
+  filter(container == "glass",
+         process == "total_impact") %>% 
+  group_by(scenario, impact_type) %>%
+  ggplot(aes(x = scenario, y = value, fill = scenario)) +
+  geom_bar(stat="identity", position = "dodge") +
+  labs(y = "Total Impact",
+       x = "Scenario",
+       title = "Glass",
+       subtitle = "Sensitivity Analysis by Impact Category") +
+  theme_bw() +
+  facet_wrap(~impact_type, scales = "free_y") +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+```{r}
+baseline_p <- ggplot(normalized_total_impact, aes(x = impact_type, y = normalized_value, fill = container)) +
+  geom_col(position = "dodge") +  
+  scale_x_discrete(guide = guide_axis(angle = 45)) +
+  scale_y_continuous(
+    limits = c(0, 3.0),  
+    breaks = seq(0, 3.0, by = 0.3),  
+    expand = expansion(mult = c(0, 0)),
+    position = "left"
+  ) +
+   scale_fill_discrete(labels = c(
+    "aluminium_normalized" = "Aluminium",
+    "PET_normalized" = "PET",
+    "glass_normalized" = "Glass"
+  ))+
+  labs(title = "Environmental Impact by Container",
+       x = "Impact Category",
+       y = "Normalized Value",
+       fill = "Container") +
+  theme_minimal() +
+  theme(
+      panel.grid.major.x = element_blank(),
+      panel.grid.minor.x = element_blank(), 
+      panel.grid.minor.y = element_blank(),
+      panel.background = element_rect(fill = "white", color = NA),
+      axis.line = element_line(color = "grey"),
+      plot.margin = margin(5, 5, 5, 5),
+      plot.title = element_text(margin = margin(b = 5)),
+      legend.margin = margin(0, 0, 0, 10),
+      aspect.ratio = 0.4,
+      axis.title.y = element_text(margin = margin(r = 5)),
+      axis.title.x = element_text(margin = margin(t = 5))
+  )
+
+baseline_p
+```
+
