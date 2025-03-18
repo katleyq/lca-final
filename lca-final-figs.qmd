@@ -36,30 +36,6 @@ normalized_total_impact <- read_csv(here("data/normalized_total_impact.csv")) %>
 
 # Sensitivity Analysis of Scenarios
 
-```{r}
-containers %>% 
-  filter(container == "aluminium",
-         process == "total_impact") %>% 
-  group_by(scenario, impact_type) %>%
-  ggplot(aes(x = scenario, y = value, fill = scenario)) +
-  geom_bar(stat="identity", position = "dodge") +
-  labs(y = "Total Impact",
-       x = "Scenario",
-       title = "Aluminium",
-       subtitle = "Sensitivity Analysis by Impact Category") +
-  theme_bw() +
-  facet_wrap(~impact_type, scales = "free_y") +
-  scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  scale_fill_manual(values = c("truck_0" = "pink", 
-                               "truck_100" = "darkred",   
-                               "recycling_0" = "#ADD8E6",  
-                               "recycling_100" = "steelblue", 
-                               "base_scenario" = "#000000", 
-                               "mass_370" = "darkgreen"))     
-
-```
-
 
 ```{r}
 containers %>% 
