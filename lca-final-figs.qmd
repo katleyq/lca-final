@@ -121,7 +121,6 @@ ggplot(normalized_total_impact, aes(x = impact_type, y = normalized_value, fill 
     expand = expansion(mult = c(0, 0)),
     position = "left"
   ) +
-  # Replace scale_fill_discrete with scale_fill_manual to set custom colors
   scale_fill_manual(
     values = c(
       "aluminium_normalized" = "navy",
@@ -227,6 +226,77 @@ containers %>%
                                "transportation" = "steelblue",   
                                "end-of-life" = "darkred",  
                                "total_impact" = "#000000")) 
+```
+
+```{r}
+containers %>% 
+  filter(life_cycle == "production") %>% 
+  group_by(container, life_cycle, impact_type) %>%
+  summarize(value = sum(value, na.rm = TRUE)) %>% 
+  ggplot(aes(x = container, y = value, fill = container)) +
+  geom_bar(stat="identity", position = "dodge") +
+  labs(y = "Total Impact",
+       x = "Container",
+       title = "Production Stage",
+       subtitle = "Contribution Analysis by Impact Category") +
+  theme_bw() +
+  facet_wrap(~impact_type, scales = "free_y") +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "none") +
+  scale_fill_manual(
+    values = c(
+      "aluminium" = "navy",
+      "glass" = "darkred",
+      "PET" = "gold"
+    ))
+```
+
+```{r}
+containers %>% 
+  filter(life_cycle == "transportation") %>% 
+  group_by(container, life_cycle, impact_type) %>%
+  summarize(value = sum(value, na.rm = TRUE)) %>% 
+  ggplot(aes(x = container, y = value, fill = container)) +
+  geom_bar(stat="identity", position = "dodge") +
+  labs(y = "Total Impact",
+       x = "Container",
+       title = "Transportation Stage",
+       subtitle = "Contribution Analysis by Impact Category") +
+  theme_bw() +
+  facet_wrap(~impact_type, scales = "free_y") +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "none") +
+  scale_fill_manual(
+    values = c(
+      "aluminium" = "navy",
+      "glass" = "darkred",
+      "PET" = "gold"
+    ))
+```
+
+```{r}
+containers %>% 
+  filter(life_cycle == "end-of-life") %>% 
+  group_by(container, life_cycle, impact_type) %>%
+  summarize(value = sum(value, na.rm = TRUE)) %>% 
+  ggplot(aes(x = container, y = value, fill = container)) +
+  geom_bar(stat="identity", position = "dodge") +
+  labs(y = "Total Impact",
+       x = "Container",
+       title = "End-of-Life Stage",
+       subtitle = "Contribution Analysis by Impact Category") +
+  theme_bw() +
+  facet_wrap(~impact_type, scales = "free_y") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "none") +
+  scale_fill_manual(
+    values = c(
+      "aluminium" = "navy",
+      "glass" = "darkred",
+      "PET" = "gold"
+    ))
 ```
 
 ```{r}
