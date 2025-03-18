@@ -23,7 +23,10 @@ containers <- read_csv(here("data/all_containers.csv")) %>%
     impact_type == "Ozone Depletion Air" ~ "Ozone Depletion",
     impact_type == "Human Health Particulate Air" ~ "Particulate Air",
     TRUE ~ impact_type
-  ))
+  )) %>% 
+  filter(impact_type != "Particulate Air",
+         impact_type != "Smog Air",
+         impact_type != "Resources")
 
 normalized_total_impact <- read_csv(here("data/normalized_total_impact.csv")) %>%
   mutate(impact_type = case_when(
@@ -56,7 +59,7 @@ containers %>%
                                "truck_100" = "darkred",   
                                "recycling_0" = "#ADD8E6",  
                                "recycling_100" = "steelblue", 
-                               "base_scenario" = "#000000", 
+                               "base_scenario" = "lightgrey", 
                                "mass_370" = "darkgreen")) 
 ``` 
 
@@ -79,7 +82,7 @@ containers %>%
                                "truck_100" = "darkred",   
                                "recycling_0" = "#ADD8E6",  
                                "recycling_100" = "steelblue", 
-                               "base_scenario" = "#000000", 
+                               "base_scenario" = "lightgrey", 
                                "mass_370" = "darkgreen")) 
 ```
 
@@ -102,7 +105,7 @@ containers %>%
                                "truck_100" = "darkred",   
                                "recycling_0" = "#ADD8E6",  
                                "recycling_100" = "steelblue", 
-                               "base_scenario" = "#000000", 
+                               "base_scenario" = "lightgrey", 
                                "mass_370" = "darkgreen")) 
 ```
 
