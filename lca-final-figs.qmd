@@ -125,11 +125,12 @@ baseline_p
 
 ## Contribution Analysis
 
+
 ```{r}
 containers %>% 
   filter(container == "aluminium") %>% 
   group_by(life_cycle, impact_type) %>%
-  # Reorder life_cycle factor levels
+  summarize(value = sum(value, na.rm = TRUE)) %>% 
   mutate(life_cycle = factor(life_cycle, 
                              levels = c("production", "transportation", "end-of-life", "total_impact"))) %>%
   ggplot(aes(x = life_cycle, y = value, fill = life_cycle)) +
@@ -140,7 +141,6 @@ containers %>%
        subtitle = "Contribution Analysis by Impact Category") +
   theme_bw() +
   facet_wrap(~impact_type, scales = "free_y") +
-  scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
@@ -148,7 +148,7 @@ containers %>%
 containers %>% 
   filter(container == "PET") %>% 
   group_by(life_cycle, impact_type) %>%
-  # Reorder life_cycle factor levels
+  summarize(value = sum(value, na.rm = TRUE)) %>% 
   mutate(life_cycle = factor(life_cycle, 
                              levels = c("production", "transportation", "end-of-life", "total_impact"))) %>%
   ggplot(aes(x = life_cycle, y = value, fill = life_cycle)) +
@@ -159,7 +159,6 @@ containers %>%
        subtitle = "Contribution Analysis by Impact Category") +
   theme_bw() +
   facet_wrap(~impact_type, scales = "free_y") +
-  scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
@@ -167,7 +166,7 @@ containers %>%
 containers %>% 
   filter(container == "glass") %>% 
   group_by(life_cycle, impact_type) %>%
-  # Reorder life_cycle factor levels
+  summarize(value = sum(value, na.rm = TRUE)) %>% 
   mutate(life_cycle = factor(life_cycle, 
                              levels = c("production", "transportation", "end-of-life", "total_impact"))) %>%
   ggplot(aes(x = life_cycle, y = value, fill = life_cycle)) +
