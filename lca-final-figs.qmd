@@ -60,7 +60,7 @@ containers %>%
                                "recycling_0" = "#ADD8E6",  
                                "recycling_100" = "steelblue", 
                                "base_scenario" = "lightgrey", 
-                               "mass_370" = "darkgreen")) 
+                               "mass_370" = "#9EBC9F")) 
 ``` 
 
 ```{r}
@@ -83,7 +83,7 @@ containers %>%
                                "recycling_0" = "#ADD8E6",  
                                "recycling_100" = "steelblue", 
                                "base_scenario" = "lightgrey", 
-                               "mass_370" = "darkgreen")) 
+                               "mass_370" = "#9EBC9F")) 
 ```
 
 ```{r}
@@ -106,11 +106,10 @@ containers %>%
                                "recycling_0" = "#ADD8E6",  
                                "recycling_100" = "steelblue", 
                                "base_scenario" = "lightgrey", 
-                               "mass_370" = "darkgreen")) 
+                               "mass_370" = "#9EBC9F")) 
 ```
-
 ```{r}
-baseline_p <- ggplot(normalized_total_impact, aes(x = impact_type, y = normalized_value, fill = container)) +
+ggplot(normalized_total_impact, aes(x = impact_type, y = normalized_value, fill = container)) +
   geom_col(position = "dodge") +  
   scale_x_discrete(guide = guide_axis(angle = 45)) +
   scale_y_continuous(
@@ -119,11 +118,19 @@ baseline_p <- ggplot(normalized_total_impact, aes(x = impact_type, y = normalize
     expand = expansion(mult = c(0, 0)),
     position = "left"
   ) +
-   scale_fill_discrete(labels = c(
-    "aluminium_normalized" = "Aluminium",
-    "PET_normalized" = "PET",
-    "glass_normalized" = "Glass"
-  ))+
+  # Replace scale_fill_discrete with scale_fill_manual to set custom colors
+  scale_fill_manual(
+    values = c(
+      "aluminium_normalized" = "navy",
+      "glass_normalized" = "darkred",
+      "PET_normalized" = "gold"
+    ),
+    labels = c(
+      "aluminium_normalized" = "Aluminium",
+      "PET_normalized" = "PET",
+      "glass_normalized" = "Glass"
+    )
+  ) +
   labs(title = "Environmental Impact by Container",
        x = "Impact Category",
        y = "Normalized Value",
@@ -142,9 +149,9 @@ baseline_p <- ggplot(normalized_total_impact, aes(x = impact_type, y = normalize
       axis.title.y = element_text(margin = margin(r = 5)),
       axis.title.x = element_text(margin = margin(t = 5))
   )
-
-baseline_p
 ```
+
+
 
 ## Contribution Analysis
 
