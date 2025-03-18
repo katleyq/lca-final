@@ -54,7 +54,8 @@ containers %>%
   theme_bw() +
   facet_wrap(~impact_type, scales = "free_y") +
   scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "none")+
   scale_fill_manual(values = c("truck_0" = "pink", 
                                "truck_100" = "darkred",   
                                "recycling_0" = "#ADD8E6",  
@@ -77,7 +78,8 @@ containers %>%
   theme_bw() +
   facet_wrap(~impact_type, scales = "free_y") +
   scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "none") +
   scale_fill_manual(values = c("truck_0" = "pink", 
                                "truck_100" = "darkred",   
                                "recycling_0" = "#ADD8E6",  
@@ -100,7 +102,8 @@ containers %>%
   theme_bw() +
   facet_wrap(~impact_type, scales = "free_y") +
   scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "none") +
   scale_fill_manual(values = c("truck_0" = "pink", 
                                "truck_100" = "darkred",   
                                "recycling_0" = "#ADD8E6",  
@@ -171,7 +174,8 @@ containers %>%
        subtitle = "Contribution Analysis by Impact Category") +
   theme_bw() +
   facet_wrap(~impact_type, scales = "free_y") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "none") +
   scale_fill_manual(values = c("production" = "darkgreen", 
                                "transportation" = "steelblue",   
                                "end-of-life" = "darkred",  
@@ -193,7 +197,8 @@ containers %>%
        subtitle = "Contribution Analysis by Impact Category") +
   theme_bw() +
   facet_wrap(~impact_type, scales = "free_y") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "none") +
   scale_fill_manual(values = c("production" = "darkgreen", 
                                "transportation" = "steelblue",   
                                "end-of-life" = "darkred",  
@@ -216,7 +221,8 @@ containers %>%
   theme_bw() +
   facet_wrap(~impact_type, scales = "free_y") +
   scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "none") +
   scale_fill_manual(values = c("production" = "darkgreen", 
                                "transportation" = "steelblue",   
                                "end-of-life" = "darkred",  
