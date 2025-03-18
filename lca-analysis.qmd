@@ -75,11 +75,11 @@ process_aluminum_scenario <- function(data_sheet, row_range, scenario_name) {
              into = c("impact_method", "impact_type", "unit"),
              sep = ", |\\[|\\]",
              fill = "right") %>%
-    mutate(
-      unit = str_trim(unit),
-      unit = str_remove(unit, "\\]$")
-    ) %>%
-    mutate(scenario = scenario_name, ,
+    # mutate(
+    #   unit = str_trim(unit),
+    #   unit = str_remove(unit, "\\]$")
+    # ) %>%
+    mutate(scenario = scenario_name,
            container = "aluminium")
 }
 
@@ -258,6 +258,7 @@ all_containers <- rbind(alum_clean,
                         glass_clean,
                         PET_clean) %>%
   select(container, scenario, impact_method, impact_type, unit, process, value) %>%
+  filter(unit != "excl. biogenic carbon ") %>% 
   mutate(life_cycle = case_when(
     process == "total_impact" ~ "total_impact",
     process == "eu_28_ferro_metals_on_landfill_ts" ~ "end-of-life",
@@ -600,6 +601,9 @@ pivot_longer(cols = c(glass_normalized, aluminium_normalized,  PET_normalized),
                names_to = "container",
                values_to = "normalized_value")%>% 
 filter(impact_category != 'Ozone Depletion Air kg CFC 11 eq.')
+
+
+write_csv(total_impact_comparison_long, "data/normalized_total_impact.csv")
 ```
 
 ```{r}
@@ -654,7 +658,7 @@ containers %>%
 containers %>% 
   group_by(impact_category, life_cycle, scenario) %>% 
   filter(life_cycle != "total_impact",
-         impact_category == "Ecotoxicity (recommended) CTUe") %>% 
+         impact_category == "Global Warming Air excl. biogenic carbon") %>% 
   summarize(sum_impact = sum(value, na.rm = TRUE)) %>% 
   ggplot(aes(x = scenario, y= sum_impact, fill = life_cycle)) +
   geom_col(position = "dodge") +

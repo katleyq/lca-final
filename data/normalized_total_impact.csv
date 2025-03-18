@@ -1,0 +1,31 @@
+scenario,impact_method,impact_type,impact_category,life_cycle,glass,aluminium,PET,container,normalized_value
+base_scenario,TRACI 2.1,Acidification,Acidification kg SO2 eq.,total_impact,0.00327,9.61e-4,2.99e-4,glass_normalized,1
+base_scenario,TRACI 2.1,Acidification,Acidification kg SO2 eq.,total_impact,0.00327,9.61e-4,2.99e-4,aluminium_normalized,0.29388379204892967
+base_scenario,TRACI 2.1,Acidification,Acidification kg SO2 eq.,total_impact,0.00327,9.61e-4,2.99e-4,PET_normalized,0.09143730886850153
+base_scenario,TRACI 2.1,Ecotoxicity (recommended),Ecotoxicity (recommended) CTUe,total_impact,0.0187,0.00512,0.0508,glass_normalized,1
+base_scenario,TRACI 2.1,Ecotoxicity (recommended),Ecotoxicity (recommended) CTUe,total_impact,0.0187,0.00512,0.0508,aluminium_normalized,0.2737967914438503
+base_scenario,TRACI 2.1,Ecotoxicity (recommended),Ecotoxicity (recommended) CTUe,total_impact,0.0187,0.00512,0.0508,PET_normalized,2.7165775401069516
+base_scenario,TRACI 2.1,Eutrophication,Eutrophication kg N eq.,total_impact,1.76e-4,3.1e-5,5.58e-5,glass_normalized,1
+base_scenario,TRACI 2.1,Eutrophication,Eutrophication kg N eq.,total_impact,1.76e-4,3.1e-5,5.58e-5,aluminium_normalized,0.17613636363636365
+base_scenario,TRACI 2.1,Eutrophication,Eutrophication kg N eq.,total_impact,1.76e-4,3.1e-5,5.58e-5,PET_normalized,0.3170454545454546
+base_scenario,TRACI 2.1,Global Warming Air,Global Warming Air excl. biogenic carbon,total_impact,0.593,0.227,0.111,glass_normalized,1
+base_scenario,TRACI 2.1,Global Warming Air,Global Warming Air excl. biogenic carbon,total_impact,0.593,0.227,0.111,aluminium_normalized,0.38279932546374373
+base_scenario,TRACI 2.1,Global Warming Air,Global Warming Air excl. biogenic carbon,total_impact,0.593,0.227,0.111,PET_normalized,0.18718381112984825
+base_scenario,TRACI 2.1,Global Warming Air,Global Warming Air incl. biogenic carbon,total_impact,0.592,0.227,0.111,glass_normalized,1
+base_scenario,TRACI 2.1,Global Warming Air,Global Warming Air incl. biogenic carbon,total_impact,0.592,0.227,0.111,aluminium_normalized,0.383445945945946
+base_scenario,TRACI 2.1,Global Warming Air,Global Warming Air incl. biogenic carbon,total_impact,0.592,0.227,0.111,PET_normalized,0.1875
+base_scenario,TRACI 2.1,Human Health Particulate Air,Human Health Particulate Air kg PM2.5 eq.,total_impact,1.27e-4,8.59e-5,1.61e-5,glass_normalized,1
+base_scenario,TRACI 2.1,Human Health Particulate Air,Human Health Particulate Air kg PM2.5 eq.,total_impact,1.27e-4,8.59e-5,1.61e-5,aluminium_normalized,0.6763779527559055
+base_scenario,TRACI 2.1,Human Health Particulate Air,Human Health Particulate Air kg PM2.5 eq.,total_impact,1.27e-4,8.59e-5,1.61e-5,PET_normalized,0.12677165354330708
+base_scenario,TRACI 2.1,Human toxicity,Human toxicity cancer (recommended),total_impact,3e-10,9.04e-11,1.41e-10,glass_normalized,1
+base_scenario,TRACI 2.1,Human toxicity,Human toxicity cancer (recommended),total_impact,3e-10,9.04e-11,1.41e-10,aluminium_normalized,0.30133333333333334
+base_scenario,TRACI 2.1,Human toxicity,Human toxicity cancer (recommended),total_impact,3e-10,9.04e-11,1.41e-10,PET_normalized,0.47000000000000003
+base_scenario,TRACI 2.1,Human toxicity,Human toxicity non-canc. (recommended),total_impact,3.17e-8,7.92e-9,5.21e-9,glass_normalized,1
+base_scenario,TRACI 2.1,Human toxicity,Human toxicity non-canc. (recommended),total_impact,3.17e-8,7.92e-9,5.21e-9,aluminium_normalized,0.2498422712933754
+base_scenario,TRACI 2.1,Human toxicity,Human toxicity non-canc. (recommended),total_impact,3.17e-8,7.92e-9,5.21e-9,PET_normalized,0.16435331230283912
+base_scenario,TRACI 2.1,Resources,Resources Fossil fuels,total_impact,1.06,0.262,0.299,glass_normalized,1
+base_scenario,TRACI 2.1,Resources,Resources Fossil fuels,total_impact,1.06,0.262,0.299,aluminium_normalized,0.24716981132075472
+base_scenario,TRACI 2.1,Resources,Resources Fossil fuels,total_impact,1.06,0.262,0.299,PET_normalized,0.2820754716981132
+base_scenario,TRACI 2.1,Smog Air,Smog Air kg O3 eq.,total_impact,0.0495,0.0118298952445689,0.00443,glass_normalized,1
+base_scenario,TRACI 2.1,Smog Air,Smog Air kg O3 eq.,total_impact,0.0495,0.0118298952445689,0.00443,aluminium_normalized,0.23898778271856363
+base_scenario,TRACI 2.1,Smog Air,Smog Air kg O3 eq.,total_impact,0.0495,0.0118298952445689,0.00443,PET_normalized,0.08949494949494949
