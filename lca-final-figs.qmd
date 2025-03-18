@@ -58,10 +58,10 @@ containers %>%
         legend.position = "none")+
   scale_fill_manual(values = c("truck_0" = "pink", 
                                "truck_100" = "darkred",   
-                               "recycling_0" = "#ADD8E6",  
-                               "recycling_100" = "steelblue", 
+                               "recycling_0" = "#A5D6A7",  
+                               "recycling_100" = "#43A047", 
                                "base_scenario" = "lightgrey", 
-                               "mass_370" = "#9EBC9F")) 
+                               "mass_370" = "#FFD166")) 
 ``` 
 
 ```{r}
@@ -82,10 +82,10 @@ containers %>%
         legend.position = "none") +
   scale_fill_manual(values = c("truck_0" = "pink", 
                                "truck_100" = "darkred",   
-                               "recycling_0" = "#ADD8E6",  
-                               "recycling_100" = "steelblue", 
+                               "recycling_0" = "#A5D6A7",  
+                               "recycling_100" = "#43A047", 
                                "base_scenario" = "lightgrey", 
-                               "mass_370" = "#9EBC9F")) 
+                               "mass_370" = "#FFD166")) 
 ```
 
 ```{r}
@@ -106,10 +106,10 @@ containers %>%
         legend.position = "none") +
   scale_fill_manual(values = c("truck_0" = "pink", 
                                "truck_100" = "darkred",   
-                               "recycling_0" = "#ADD8E6",  
-                               "recycling_100" = "steelblue", 
+                               "recycling_0" = "#A5D6A7",  
+                               "recycling_100" = "#43A047", 
                                "base_scenario" = "lightgrey", 
-                               "mass_370" = "#9EBC9F")) 
+                               "mass_370" = "#FFD166")) 
 ```
 ```{r}
 ggplot(normalized_total_impact, aes(x = impact_type, y = normalized_value, fill = container)) +
@@ -123,9 +123,9 @@ ggplot(normalized_total_impact, aes(x = impact_type, y = normalized_value, fill 
   ) +
   scale_fill_manual(
     values = c(
-      "aluminium_normalized" = "navy",
-      "glass_normalized" = "darkred",
-      "PET_normalized" = "gold"
+      "aluminium_normalized" = "#C0C5C9",
+      "glass_normalized" = "#B3CCCC",
+      "PET_normalized" = "#6BABCF"
     ),
     labels = c(
       "aluminium_normalized" = "Aluminium",
@@ -176,9 +176,9 @@ containers %>%
   facet_wrap(~impact_type, scales = "free_y") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
         legend.position = "none") +
-  scale_fill_manual(values = c("production" = "darkgreen", 
-                               "transportation" = "steelblue",   
-                               "end-of-life" = "darkred",  
+  scale_fill_manual(values = c("production" = "#1A936F", 
+                               "transportation" = "#3A6EA5",   
+                               "end-of-life" = "#C25B56",  
                                "total_impact" = "#000000")) 
 ```
 
@@ -200,9 +200,9 @@ containers %>%
   facet_wrap(~impact_type, scales = "free_y") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
         legend.position = "none") +
-  scale_fill_manual(values = c("production" = "darkgreen", 
-                               "transportation" = "steelblue",   
-                               "end-of-life" = "darkred",  
+  scale_fill_manual(values = c("production" = "#1A936F", 
+                               "transportation" = "#3A6EA5",   
+                               "end-of-life" = "#C25B56",  
                                "total_impact" = "#000000")) 
 ```
 
@@ -225,9 +225,9 @@ containers %>%
   scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
         legend.position = "none") +
-  scale_fill_manual(values = c("production" = "darkgreen", 
-                               "transportation" = "steelblue",   
-                               "end-of-life" = "darkred",  
+  scale_fill_manual(values = c("production" = "#1A936F", 
+                               "transportation" = "#3A6EA5",   
+                               "end-of-life" = "#C25B56",  
                                "total_impact" = "#000000")) 
 ```
 
@@ -250,9 +250,9 @@ containers %>%
         legend.position = "none") +
   scale_fill_manual(
     values = c(
-      "aluminium" = "navy",
-      "glass" = "darkred",
-      "PET" = "gold"
+      "aluminium" = "#C0C5C9",
+      "glass" = "#B3CCCC",
+      "PET" = "#6BABCF"
     ))
 ```
 
@@ -275,9 +275,9 @@ containers %>%
         legend.position = "none") +
   scale_fill_manual(
     values = c(
-      "aluminium" = "navy",
-      "glass" = "darkred",
-      "PET" = "gold"
+      "aluminium" = "#C0C5C9",
+      "glass" = "#B3CCCC",
+      "PET" = "#6BABCF"
     ))
 ```
 
@@ -299,9 +299,9 @@ containers %>%
         legend.position = "none") +
   scale_fill_manual(
     values = c(
-      "aluminium" = "navy",
-      "glass" = "darkred",
-      "PET" = "gold"
+      "aluminium" = "#C0C5C9",
+      "glass" = "#B3CCCC",
+      "PET" = "#6BABCF"
     ))
 ```
 
