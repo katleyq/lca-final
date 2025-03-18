@@ -160,6 +160,7 @@ ggplot(normalized_total_impact, aes(x = impact_type, y = normalized_value, fill 
 
 ```{r}
 containers %>% 
+  filter(scenario == "base_scenario") %>% 
   filter(container == "aluminium") %>% 
   group_by(life_cycle, impact_type) %>%
   summarize(value = sum(value, na.rm = TRUE)) %>% 
@@ -183,6 +184,7 @@ containers %>%
 
 ```{r}
 containers %>% 
+  filter(scenario == "base_scenario") %>% 
   filter(container == "PET") %>% 
   group_by(life_cycle, impact_type) %>%
   summarize(value = sum(value, na.rm = TRUE)) %>% 
@@ -206,6 +208,7 @@ containers %>%
 
 ```{r}
 containers %>% 
+  filter(scenario == "base_scenario") %>% 
   filter(container == "glass") %>% 
   group_by(life_cycle, impact_type) %>%
   summarize(value = sum(value, na.rm = TRUE)) %>% 
@@ -230,6 +233,7 @@ containers %>%
 
 ```{r}
 containers %>% 
+  filter(scenario == "base_scenario") %>% 
   filter(life_cycle == "production") %>% 
   group_by(container, life_cycle, impact_type) %>%
   summarize(value = sum(value, na.rm = TRUE)) %>% 
@@ -254,6 +258,7 @@ containers %>%
 
 ```{r}
 containers %>% 
+  filter(scenario == "base_scenario") %>% 
   filter(life_cycle == "transportation") %>% 
   group_by(container, life_cycle, impact_type) %>%
   summarize(value = sum(value, na.rm = TRUE)) %>% 
@@ -278,6 +283,7 @@ containers %>%
 
 ```{r}
 containers %>% 
+  filter(scenario == "base_scenario") %>% 
   filter(life_cycle == "end-of-life") %>% 
   group_by(container, life_cycle, impact_type) %>%
   summarize(value = sum(value, na.rm = TRUE)) %>% 
