@@ -75,10 +75,10 @@ process_aluminum_scenario <- function(data_sheet, row_range, scenario_name) {
              into = c("impact_method", "impact_type", "unit"),
              sep = ", |\\[|\\]",
              fill = "right") %>%
-    # mutate(
-    #   unit = str_trim(unit),
-    #   unit = str_remove(unit, "\\]$")
-    # ) %>%
+    mutate(
+      unit = str_trim(unit),
+      unit = str_remove(unit, "\\]$")
+    ) %>%
     mutate(scenario = scenario_name,
            container = "aluminium")
 }
@@ -258,7 +258,8 @@ all_containers <- rbind(alum_clean,
                         glass_clean,
                         PET_clean) %>%
   select(container, scenario, impact_method, impact_type, unit, process, value) %>%
-  filter(unit != "excl. biogenic carbon ") %>% 
+  filter(unit != "excl. biogenic carbon ",
+         unit != "excl. biogenic carbon") %>% 
   mutate(life_cycle = case_when(
     process == "total_impact" ~ "total_impact",
     process == "eu_28_ferro_metals_on_landfill_ts" ~ "end-of-life",

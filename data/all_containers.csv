@@ -35,18 +35,18 @@ aluminium,base_scenario,TRACI 2.1,Eutrophication ,kg N eq.,glo_truck_euro_5_20_2
 aluminium,base_scenario,TRACI 2.1,Eutrophication ,kg N eq.,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,6.35e-7,transportation
 aluminium,base_scenario,TRACI 2.1,Eutrophication ,kg N eq.,us_diesel_mix_at_refinery_ts,9.49e-7,transportation
 aluminium,base_scenario,TRACI 2.1,Eutrophication ,kg N eq.,us_electricity_grid_mix_ts,7.42e-7,production
-aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,total_impact,0.227,total_impact
-aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu_28_ferro_metals_on_landfill_ts,8.57e-4,end-of-life
-aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.53,production
-aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.354,end-of-life
-aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0135,end-of-life
-aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.0253,production
-aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,1.4e-4,transportation
-aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,4.2e-4,transportation
-aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,4.2e-4,transportation
-aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,0.00359,transportation
-aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,us_diesel_mix_at_refinery_ts,5.64e-4,transportation
-aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,us_electricity_grid_mix_ts,0.00645,production
+aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,total_impact,0.227,total_impact
+aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_ferro_metals_on_landfill_ts,8.57e-4,end-of-life
+aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.53,production
+aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.354,end-of-life
+aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0135,end-of-life
+aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.0253,production
+aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,1.4e-4,transportation
+aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,4.2e-4,transportation
+aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,4.2e-4,transportation
+aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,0.00359,transportation
+aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,us_diesel_mix_at_refinery_ts,5.64e-4,transportation
+aluminium,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,us_electricity_grid_mix_ts,0.00645,production
 aluminium,base_scenario,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,total_impact,8.59e-5,total_impact
 aluminium,base_scenario,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,eu_28_ferro_metals_on_landfill_ts,1.94e-7,end-of-life
 aluminium,base_scenario,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.41e-4,production
@@ -59,30 +59,30 @@ aluminium,base_scenario,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,glo
 aluminium,base_scenario,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,1.67e-7,transportation
 aluminium,base_scenario,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,us_diesel_mix_at_refinery_ts,1.07e-7,transportation
 aluminium,base_scenario,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,us_electricity_grid_mix_ts,6.48e-7,production
-aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended) ,total_impact,9.04e-11,total_impact
-aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended) ,eu_28_ferro_metals_on_landfill_ts,2.52e-12,end-of-life
-aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.24e-10,production
-aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-1.5e-10,end-of-life
-aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,2.04e-12,end-of-life
-aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,6.75e-12,production
-aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,5.62e-17,transportation
-aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,5.62e-17,transportation
-aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,4.95e-16,transportation
-aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended) ,us_diesel_mix_at_refinery_ts,3.13e-12,transportation
-aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended) ,us_electricity_grid_mix_ts,1.48e-12,production
-aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended) ,total_impact,7.92e-9,total_impact
-aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu_28_ferro_metals_on_landfill_ts,2.92e-10,end-of-life
-aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.12e-8,production
-aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-1.42e-8,end-of-life
-aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,4.11e-11,end-of-life
-aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,1.62e-10,production
-aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,1.42e-17,transportation
-aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,1.42e-17,transportation
-aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,1.25e-16,transportation
-aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended) ,us_diesel_mix_at_refinery_ts,2.48e-10,transportation
-aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended) ,us_electricity_grid_mix_ts,1.26e-10,production
+aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended),total_impact,9.04e-11,total_impact
+aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended),eu_28_ferro_metals_on_landfill_ts,2.52e-12,end-of-life
+aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.24e-10,production
+aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-1.5e-10,end-of-life
+aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,2.04e-12,end-of-life
+aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,6.75e-12,production
+aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended),glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
+aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,5.62e-17,transportation
+aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,5.62e-17,transportation
+aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended),glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,4.95e-16,transportation
+aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended),us_diesel_mix_at_refinery_ts,3.13e-12,transportation
+aluminium,base_scenario,TRACI 2.1,Human toxicity,cancer (recommended),us_electricity_grid_mix_ts,1.48e-12,production
+aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended),total_impact,7.92e-9,total_impact
+aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended),eu_28_ferro_metals_on_landfill_ts,2.92e-10,end-of-life
+aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.12e-8,production
+aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-1.42e-8,end-of-life
+aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,4.11e-11,end-of-life
+aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,1.62e-10,production
+aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
+aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,1.42e-17,transportation
+aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,1.42e-17,transportation
+aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,1.25e-16,transportation
+aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended),us_diesel_mix_at_refinery_ts,2.48e-10,transportation
+aluminium,base_scenario,TRACI 2.1,Human toxicity,non-canc. (recommended),us_electricity_grid_mix_ts,1.26e-10,production
 aluminium,base_scenario,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,total_impact,3.24e-12,total_impact
 aluminium,base_scenario,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,eu_28_ferro_metals_on_landfill_ts,2.77e-18,end-of-life
 aluminium,base_scenario,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,7.73e-12,production
@@ -95,18 +95,18 @@ aluminium,base_scenario,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,glo_truck_e
 aluminium,base_scenario,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,NA,transportation
 aluminium,base_scenario,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,us_diesel_mix_at_refinery_ts,5.48e-19,transportation
 aluminium,base_scenario,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,us_electricity_grid_mix_ts,3.11e-17,production
-aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels ,total_impact,0.262,total_impact
-aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels ,eu_28_ferro_metals_on_landfill_ts,0.00172,end-of-life
-aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.534,production
-aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.356,end-of-life
-aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0265,end-of-life
-aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.04,production
-aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
-aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,NA,transportation
-aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,NA,transportation
-aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels ,us_diesel_mix_at_refinery_ts,0.0097,transportation
-aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels ,us_electricity_grid_mix_ts,0.0067,production
+aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels,total_impact,0.262,total_impact
+aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels,eu_28_ferro_metals_on_landfill_ts,0.00172,end-of-life
+aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.534,production
+aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.356,end-of-life
+aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0265,end-of-life
+aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.04,production
+aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
+aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
+aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,NA,transportation
+aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,NA,transportation
+aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels,us_diesel_mix_at_refinery_ts,0.0097,transportation
+aluminium,base_scenario,TRACI 2.1,Resources,Fossil fuels,us_electricity_grid_mix_ts,0.0067,production
 aluminium,base_scenario,TRACI 2.1,Smog Air ,kg O3 eq.,total_impact,0.0118298952445689,total_impact
 aluminium,base_scenario,TRACI 2.1,Smog Air ,kg O3 eq.,eu_28_ferro_metals_on_landfill_ts,4.66e-5,end-of-life
 aluminium,base_scenario,TRACI 2.1,Smog Air ,kg O3 eq.,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.0284,production
@@ -155,18 +155,18 @@ aluminium,truck_0,TRACI 2.1,Eutrophication ,kg N eq.,glo_truck_euro_5_20_26t_gro
 aluminium,truck_0,TRACI 2.1,Eutrophication ,kg N eq.,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,6.35e-7,transportation
 aluminium,truck_0,TRACI 2.1,Eutrophication ,kg N eq.,us_diesel_mix_at_refinery_ts,8.91e-7,transportation
 aluminium,truck_0,TRACI 2.1,Eutrophication ,kg N eq.,us_electricity_grid_mix_ts,7.42e-7,production
-aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,total_impact,0.227,total_impact
-aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu_28_ferro_metals_on_landfill_ts,8.57e-4,end-of-life
-aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.53,production
-aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.354,end-of-life
-aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0135,end-of-life
-aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.0253,production
-aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,2.8e-4,transportation
-aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
-aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,4.2e-4,transportation
-aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,0.00359,transportation
-aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,us_diesel_mix_at_refinery_ts,5.3e-4,transportation
-aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,us_electricity_grid_mix_ts,0.00645,production
+aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,total_impact,0.227,total_impact
+aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_ferro_metals_on_landfill_ts,8.57e-4,end-of-life
+aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.53,production
+aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.354,end-of-life
+aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0135,end-of-life
+aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.0253,production
+aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,2.8e-4,transportation
+aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
+aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,4.2e-4,transportation
+aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,0.00359,transportation
+aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,us_diesel_mix_at_refinery_ts,5.3e-4,transportation
+aluminium,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,us_electricity_grid_mix_ts,0.00645,production
 aluminium,truck_0,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,total_impact,8.59e-5,total_impact
 aluminium,truck_0,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,eu_28_ferro_metals_on_landfill_ts,1.94e-7,end-of-life
 aluminium,truck_0,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.41e-4,production
@@ -179,30 +179,30 @@ aluminium,truck_0,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,glo_truck
 aluminium,truck_0,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,1.67e-7,transportation
 aluminium,truck_0,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,us_diesel_mix_at_refinery_ts,1e-7,transportation
 aluminium,truck_0,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,us_electricity_grid_mix_ts,6.48e-7,production
-aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended) ,total_impact,9.02e-11,total_impact
-aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended) ,eu_28_ferro_metals_on_landfill_ts,2.52e-12,end-of-life
-aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.24e-10,production
-aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-1.5e-10,end-of-life
-aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,2.04e-12,end-of-life
-aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,6.75e-12,production
-aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
-aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,5.62e-17,transportation
-aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,4.95e-16,transportation
-aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended) ,us_diesel_mix_at_refinery_ts,2.94e-12,transportation
-aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended) ,us_electricity_grid_mix_ts,1.48e-12,production
-aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,total_impact,7.91e-9,total_impact
-aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu_28_ferro_metals_on_landfill_ts,2.92e-10,end-of-life
-aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.12e-8,production
-aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-1.42e-8,end-of-life
-aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,4.11e-11,end-of-life
-aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,1.62e-10,production
-aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
-aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,1.42e-17,transportation
-aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,1.25e-16,transportation
-aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,us_diesel_mix_at_refinery_ts,2.33e-10,transportation
-aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,us_electricity_grid_mix_ts,1.26e-10,production
+aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended),total_impact,9.02e-11,total_impact
+aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended),eu_28_ferro_metals_on_landfill_ts,2.52e-12,end-of-life
+aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.24e-10,production
+aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-1.5e-10,end-of-life
+aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,2.04e-12,end-of-life
+aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,6.75e-12,production
+aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended),glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
+aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
+aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,5.62e-17,transportation
+aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended),glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,4.95e-16,transportation
+aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended),us_diesel_mix_at_refinery_ts,2.94e-12,transportation
+aluminium,truck_0,TRACI 2.1,Human toxicity,cancer (recommended),us_electricity_grid_mix_ts,1.48e-12,production
+aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended),total_impact,7.91e-9,total_impact
+aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended),eu_28_ferro_metals_on_landfill_ts,2.92e-10,end-of-life
+aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.12e-8,production
+aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-1.42e-8,end-of-life
+aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,4.11e-11,end-of-life
+aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,1.62e-10,production
+aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
+aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
+aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,1.42e-17,transportation
+aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,1.25e-16,transportation
+aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended),us_diesel_mix_at_refinery_ts,2.33e-10,transportation
+aluminium,truck_0,TRACI 2.1,Human toxicity,non-canc. (recommended),us_electricity_grid_mix_ts,1.26e-10,production
 aluminium,truck_0,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,total_impact,3.24e-12,total_impact
 aluminium,truck_0,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,eu_28_ferro_metals_on_landfill_ts,2.77e-18,end-of-life
 aluminium,truck_0,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,7.73e-12,production
@@ -215,18 +215,18 @@ aluminium,truck_0,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,glo_truck_euro_5_
 aluminium,truck_0,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,NA,transportation
 aluminium,truck_0,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,us_diesel_mix_at_refinery_ts,5.14e-19,transportation
 aluminium,truck_0,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,us_electricity_grid_mix_ts,3.11e-17,production
-aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels ,total_impact,0.261,total_impact
-aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels ,eu_28_ferro_metals_on_landfill_ts,0.00172,end-of-life
-aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.534,production
-aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.356,end-of-life
-aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0265,end-of-life
-aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.04,production
-aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
-aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,NA,transportation
-aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,NA,transportation
-aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels ,us_diesel_mix_at_refinery_ts,0.0091,transportation
-aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels ,us_electricity_grid_mix_ts,0.0067,production
+aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels,total_impact,0.261,total_impact
+aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels,eu_28_ferro_metals_on_landfill_ts,0.00172,end-of-life
+aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.534,production
+aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.356,end-of-life
+aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0265,end-of-life
+aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.04,production
+aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
+aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
+aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,NA,transportation
+aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,NA,transportation
+aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels,us_diesel_mix_at_refinery_ts,0.0091,transportation
+aluminium,truck_0,TRACI 2.1,Resources,Fossil fuels,us_electricity_grid_mix_ts,0.0067,production
 aluminium,truck_0,TRACI 2.1,Smog Air ,kg O3 eq.,total_impact,0.0119,total_impact
 aluminium,truck_0,TRACI 2.1,Smog Air ,kg O3 eq.,eu_28_ferro_metals_on_landfill_ts,4.66e-5,end-of-life
 aluminium,truck_0,TRACI 2.1,Smog Air ,kg O3 eq.,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.0284,production
@@ -275,18 +275,18 @@ aluminium,truck_100,TRACI 2.1,Eutrophication ,kg N eq.,glo_truck_euro_5_20_26t_g
 aluminium,truck_100,TRACI 2.1,Eutrophication ,kg N eq.,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,6.35e-7,transportation
 aluminium,truck_100,TRACI 2.1,Eutrophication ,kg N eq.,us_diesel_mix_at_refinery_ts,1.01e-6,transportation
 aluminium,truck_100,TRACI 2.1,Eutrophication ,kg N eq.,us_electricity_grid_mix_ts,7.42e-7,production
-aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,total_impact,0.227,total_impact
-aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu_28_ferro_metals_on_landfill_ts,8.57e-4,end-of-life
-aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.53,production
-aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.354,end-of-life
-aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0135,end-of-life
-aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.0253,production
-aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,8.41e-4,transportation
-aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,4.2e-4,transportation
-aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,0.00359,transportation
-aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,us_diesel_mix_at_refinery_ts,5.99e-4,transportation
-aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,us_electricity_grid_mix_ts,0.00645,production
+aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,total_impact,0.227,total_impact
+aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_ferro_metals_on_landfill_ts,8.57e-4,end-of-life
+aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.53,production
+aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.354,end-of-life
+aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0135,end-of-life
+aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.0253,production
+aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
+aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,8.41e-4,transportation
+aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,4.2e-4,transportation
+aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,0.00359,transportation
+aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,us_diesel_mix_at_refinery_ts,5.99e-4,transportation
+aluminium,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,us_electricity_grid_mix_ts,0.00645,production
 aluminium,truck_100,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,total_impact,8.58e-5,total_impact
 aluminium,truck_100,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,eu_28_ferro_metals_on_landfill_ts,1.94e-7,end-of-life
 aluminium,truck_100,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.41e-4,production
@@ -299,30 +299,30 @@ aluminium,truck_100,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,glo_tru
 aluminium,truck_100,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,1.67e-7,transportation
 aluminium,truck_100,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,us_diesel_mix_at_refinery_ts,1.13e-7,transportation
 aluminium,truck_100,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,us_electricity_grid_mix_ts,6.48e-7,production
-aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended) ,total_impact,9.06e-11,total_impact
-aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended) ,eu_28_ferro_metals_on_landfill_ts,2.52e-12,end-of-life
-aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.24e-10,production
-aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-1.5e-10,end-of-life
-aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,2.04e-12,end-of-life
-aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,6.75e-12,production
-aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,1.12e-16,transportation
-aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,5.62e-17,transportation
-aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,4.95e-16,transportation
-aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended) ,us_diesel_mix_at_refinery_ts,3.33e-12,transportation
-aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended) ,us_electricity_grid_mix_ts,1.48e-12,production
-aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,total_impact,7.94e-9,total_impact
-aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu_28_ferro_metals_on_landfill_ts,2.92e-10,end-of-life
-aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.12e-8,production
-aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-1.42e-8,end-of-life
-aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,4.11e-11,end-of-life
-aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,1.62e-10,production
-aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,2.85e-17,transportation
-aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,1.42e-17,transportation
-aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,1.25e-16,transportation
-aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,us_diesel_mix_at_refinery_ts,2.63e-10,transportation
-aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,us_electricity_grid_mix_ts,1.26e-10,production
+aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended),total_impact,9.06e-11,total_impact
+aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended),eu_28_ferro_metals_on_landfill_ts,2.52e-12,end-of-life
+aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.24e-10,production
+aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-1.5e-10,end-of-life
+aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,2.04e-12,end-of-life
+aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,6.75e-12,production
+aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended),glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
+aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,1.12e-16,transportation
+aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,5.62e-17,transportation
+aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended),glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,4.95e-16,transportation
+aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended),us_diesel_mix_at_refinery_ts,3.33e-12,transportation
+aluminium,truck_100,TRACI 2.1,Human toxicity,cancer (recommended),us_electricity_grid_mix_ts,1.48e-12,production
+aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended),total_impact,7.94e-9,total_impact
+aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended),eu_28_ferro_metals_on_landfill_ts,2.92e-10,end-of-life
+aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.12e-8,production
+aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-1.42e-8,end-of-life
+aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,4.11e-11,end-of-life
+aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,1.62e-10,production
+aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
+aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,2.85e-17,transportation
+aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,1.42e-17,transportation
+aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,1.25e-16,transportation
+aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended),us_diesel_mix_at_refinery_ts,2.63e-10,transportation
+aluminium,truck_100,TRACI 2.1,Human toxicity,non-canc. (recommended),us_electricity_grid_mix_ts,1.26e-10,production
 aluminium,truck_100,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,total_impact,3.24e-12,total_impact
 aluminium,truck_100,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,eu_28_ferro_metals_on_landfill_ts,2.77e-18,end-of-life
 aluminium,truck_100,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,7.73e-12,production
@@ -335,18 +335,18 @@ aluminium,truck_100,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,glo_truck_euro_
 aluminium,truck_100,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,NA,transportation
 aluminium,truck_100,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,us_diesel_mix_at_refinery_ts,5.81e-19,transportation
 aluminium,truck_100,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,us_electricity_grid_mix_ts,3.11e-17,production
-aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels ,total_impact,0.262,total_impact
-aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels ,eu_28_ferro_metals_on_landfill_ts,0.00172,end-of-life
-aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.534,production
-aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.356,end-of-life
-aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0265,end-of-life
-aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.04,production
-aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
-aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,NA,transportation
-aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,NA,transportation
-aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels ,us_diesel_mix_at_refinery_ts,0.0103,transportation
-aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels ,us_electricity_grid_mix_ts,0.0067,production
+aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels,total_impact,0.262,total_impact
+aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels,eu_28_ferro_metals_on_landfill_ts,0.00172,end-of-life
+aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.534,production
+aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.356,end-of-life
+aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0265,end-of-life
+aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.04,production
+aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
+aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
+aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,NA,transportation
+aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,NA,transportation
+aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels,us_diesel_mix_at_refinery_ts,0.0103,transportation
+aluminium,truck_100,TRACI 2.1,Resources,Fossil fuels,us_electricity_grid_mix_ts,0.0067,production
 aluminium,truck_100,TRACI 2.1,Smog Air ,kg O3 eq.,total_impact,0.0118,total_impact
 aluminium,truck_100,TRACI 2.1,Smog Air ,kg O3 eq.,eu_28_ferro_metals_on_landfill_ts,4.66e-5,end-of-life
 aluminium,truck_100,TRACI 2.1,Smog Air ,kg O3 eq.,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.0284,production
@@ -395,18 +395,18 @@ aluminium,recycling_0,TRACI 2.1,Eutrophication ,kg N eq.,glo_truck_euro_5_20_26t
 aluminium,recycling_0,TRACI 2.1,Eutrophication ,kg N eq.,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,6.35e-7,transportation
 aluminium,recycling_0,TRACI 2.1,Eutrophication ,kg N eq.,us_diesel_mix_at_refinery_ts,8.61e-7,transportation
 aluminium,recycling_0,TRACI 2.1,Eutrophication ,kg N eq.,us_electricity_grid_mix_ts,7.42e-7,production
-aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,total_impact,0.382,total_impact
-aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu_28_ferro_metals_on_landfill_ts,0.00171,end-of-life
-aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.53,production
-aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.193,end-of-life
-aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.00735,end-of-life
-aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.0253,production
-aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,1.4e-4,transportation
-aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,4.2e-4,transportation
-aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,NA,transportation
-aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,0.00359,transportation
-aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,us_diesel_mix_at_refinery_ts,5.12e-4,transportation
-aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,us_electricity_grid_mix_ts,0.00645,production
+aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,total_impact,0.382,total_impact
+aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_ferro_metals_on_landfill_ts,0.00171,end-of-life
+aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.53,production
+aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.193,end-of-life
+aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.00735,end-of-life
+aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.0253,production
+aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,1.4e-4,transportation
+aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,4.2e-4,transportation
+aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,NA,transportation
+aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,0.00359,transportation
+aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,us_diesel_mix_at_refinery_ts,5.12e-4,transportation
+aluminium,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,us_electricity_grid_mix_ts,0.00645,production
 aluminium,recycling_0,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,total_impact,1.59e-4,total_impact
 aluminium,recycling_0,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,eu_28_ferro_metals_on_landfill_ts,3.88e-7,end-of-life
 aluminium,recycling_0,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.41e-4,production
@@ -419,30 +419,30 @@ aluminium,recycling_0,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,glo_t
 aluminium,recycling_0,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,1.67e-7,transportation
 aluminium,recycling_0,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,us_diesel_mix_at_refinery_ts,9.68e-8,transportation
 aluminium,recycling_0,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,us_electricity_grid_mix_ts,6.48e-7,production
-aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended) ,total_impact,1.6e-10,total_impact
-aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended) ,eu_28_ferro_metals_on_landfill_ts,5.04e-12,end-of-life
-aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.24e-10,production
-aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-8.17e-11,end-of-life
-aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,1.12e-12,end-of-life
-aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,6.75e-12,production
-aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,5.62e-17,transportation
-aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,NA,transportation
-aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,4.95e-16,transportation
-aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended) ,us_diesel_mix_at_refinery_ts,2.85e-12,transportation
-aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended) ,us_electricity_grid_mix_ts,1.48e-12,production
-aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,total_impact,1.46e-8,total_impact
-aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu_28_ferro_metals_on_landfill_ts,5.83e-10,end-of-life
-aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.12e-8,production
-aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-7.74e-9,end-of-life
-aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,2.24e-11,end-of-life
-aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,1.62e-10,production
-aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,1.42e-17,transportation
-aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,NA,transportation
-aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,1.25e-16,transportation
-aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,us_diesel_mix_at_refinery_ts,2.25e-10,transportation
-aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended) ,us_electricity_grid_mix_ts,1.26e-10,production
+aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended),total_impact,1.6e-10,total_impact
+aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended),eu_28_ferro_metals_on_landfill_ts,5.04e-12,end-of-life
+aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.24e-10,production
+aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-8.17e-11,end-of-life
+aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,1.12e-12,end-of-life
+aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,6.75e-12,production
+aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended),glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
+aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,5.62e-17,transportation
+aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,NA,transportation
+aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended),glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,4.95e-16,transportation
+aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended),us_diesel_mix_at_refinery_ts,2.85e-12,transportation
+aluminium,recycling_0,TRACI 2.1,Human toxicity,cancer (recommended),us_electricity_grid_mix_ts,1.48e-12,production
+aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended),total_impact,1.46e-8,total_impact
+aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended),eu_28_ferro_metals_on_landfill_ts,5.83e-10,end-of-life
+aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.12e-8,production
+aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-7.74e-9,end-of-life
+aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,2.24e-11,end-of-life
+aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,1.62e-10,production
+aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
+aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,1.42e-17,transportation
+aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,NA,transportation
+aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,1.25e-16,transportation
+aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended),us_diesel_mix_at_refinery_ts,2.25e-10,transportation
+aluminium,recycling_0,TRACI 2.1,Human toxicity,non-canc. (recommended),us_electricity_grid_mix_ts,1.26e-10,production
 aluminium,recycling_0,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,total_impact,5.52e-12,total_impact
 aluminium,recycling_0,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,eu_28_ferro_metals_on_landfill_ts,5.55e-18,end-of-life
 aluminium,recycling_0,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,7.73e-12,production
@@ -455,18 +455,18 @@ aluminium,recycling_0,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,glo_truck_eur
 aluminium,recycling_0,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,NA,transportation
 aluminium,recycling_0,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,us_diesel_mix_at_refinery_ts,4.97e-19,transportation
 aluminium,recycling_0,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,us_electricity_grid_mix_ts,3.11e-17,production
-aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels ,total_impact,0.413,total_impact
-aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels ,eu_28_ferro_metals_on_landfill_ts,0.00344,end-of-life
-aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.534,production
-aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.194,end-of-life
-aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0145,end-of-life
-aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.04,production
-aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
-aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,NA,transportation
-aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,NA,transportation
-aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels ,us_diesel_mix_at_refinery_ts,0.0088,transportation
-aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels ,us_electricity_grid_mix_ts,0.0067,production
+aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels,total_impact,0.413,total_impact
+aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels,eu_28_ferro_metals_on_landfill_ts,0.00344,end-of-life
+aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.534,production
+aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.194,end-of-life
+aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0145,end-of-life
+aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.04,production
+aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
+aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
+aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,NA,transportation
+aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,NA,transportation
+aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels,us_diesel_mix_at_refinery_ts,0.0088,transportation
+aluminium,recycling_0,TRACI 2.1,Resources,Fossil fuels,us_electricity_grid_mix_ts,0.0067,production
 aluminium,recycling_0,TRACI 2.1,Smog Air ,kg O3 eq.,total_impact,0.0202,total_impact
 aluminium,recycling_0,TRACI 2.1,Smog Air ,kg O3 eq.,eu_28_ferro_metals_on_landfill_ts,9.32e-5,end-of-life
 aluminium,recycling_0,TRACI 2.1,Smog Air ,kg O3 eq.,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.0284,production
@@ -515,18 +515,18 @@ aluminium,recycling_100,TRACI 2.1,Eutrophication ,kg N eq.,glo_truck_euro_5_20_2
 aluminium,recycling_100,TRACI 2.1,Eutrophication ,kg N eq.,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,6.35e-7,transportation
 aluminium,recycling_100,TRACI 2.1,Eutrophication ,kg N eq.,us_diesel_mix_at_refinery_ts,1.04e-6,transportation
 aluminium,recycling_100,TRACI 2.1,Eutrophication ,kg N eq.,us_electricity_grid_mix_ts,7.42e-7,production
-aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,total_impact,0.0719,total_impact
-aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu_28_ferro_metals_on_landfill_ts,NA,end-of-life
-aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.53,production
-aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.515,end-of-life
-aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0196,end-of-life
-aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.0253,production
-aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,1.4e-4,transportation
-aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,4.2e-4,transportation
-aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,8.41e-4,transportation
-aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,0.00359,transportation
-aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,us_diesel_mix_at_refinery_ts,6.16e-4,transportation
-aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon ,us_electricity_grid_mix_ts,0.00645,production
+aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,total_impact,0.0719,total_impact
+aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_ferro_metals_on_landfill_ts,NA,end-of-life
+aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.53,production
+aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.515,end-of-life
+aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0196,end-of-life
+aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.0253,production
+aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,1.4e-4,transportation
+aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,4.2e-4,transportation
+aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,8.41e-4,transportation
+aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,0.00359,transportation
+aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,us_diesel_mix_at_refinery_ts,6.16e-4,transportation
+aluminium,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,us_electricity_grid_mix_ts,0.00645,production
 aluminium,recycling_100,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,total_impact,1.31e-5,total_impact
 aluminium,recycling_100,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,eu_28_ferro_metals_on_landfill_ts,NA,end-of-life
 aluminium,recycling_100,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.41e-4,production
@@ -539,30 +539,30 @@ aluminium,recycling_100,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,glo
 aluminium,recycling_100,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,1.67e-7,transportation
 aluminium,recycling_100,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,us_diesel_mix_at_refinery_ts,1.16e-7,transportation
 aluminium,recycling_100,TRACI 2.1,Human Health Particulate Air ,kg PM2.5 eq.,us_electricity_grid_mix_ts,6.48e-7,production
-aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended) ,total_impact,2.1e-11,total_impact
-aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended) ,eu_28_ferro_metals_on_landfill_ts,NA,end-of-life
-aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.24e-10,production
-aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-2.18e-10,end-of-life
-aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,2.97e-12,end-of-life
-aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended) ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,6.75e-12,production
-aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,5.62e-17,transportation
-aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,1.12e-16,transportation
-aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended) ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,4.95e-16,transportation
-aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended) ,us_diesel_mix_at_refinery_ts,3.42e-12,transportation
-aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended) ,us_electricity_grid_mix_ts,1.48e-12,production
-aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,total_impact,1.22e-9,total_impact
-aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu_28_ferro_metals_on_landfill_ts,NA,end-of-life
-aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.12e-8,production
-aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-2.06e-8,end-of-life
-aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,5.98e-11,end-of-life
-aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,1.62e-10,production
-aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,1.42e-17,transportation
-aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,2.85e-17,transportation
-aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,1.25e-16,transportation
-aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,us_diesel_mix_at_refinery_ts,2.71e-10,transportation
-aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended) ,us_electricity_grid_mix_ts,1.26e-10,production
+aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended),total_impact,2.1e-11,total_impact
+aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended),eu_28_ferro_metals_on_landfill_ts,NA,end-of-life
+aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.24e-10,production
+aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-2.18e-10,end-of-life
+aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,2.97e-12,end-of-life
+aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended),eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,6.75e-12,production
+aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended),glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
+aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,5.62e-17,transportation
+aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,1.12e-16,transportation
+aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended),glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,4.95e-16,transportation
+aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended),us_diesel_mix_at_refinery_ts,3.42e-12,transportation
+aluminium,recycling_100,TRACI 2.1,Human toxicity,cancer (recommended),us_electricity_grid_mix_ts,1.48e-12,production
+aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended),total_impact,1.22e-9,total_impact
+aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended),eu_28_ferro_metals_on_landfill_ts,NA,end-of-life
+aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,2.12e-8,production
+aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-2.06e-8,end-of-life
+aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,5.98e-11,end-of-life
+aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended),eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,1.62e-10,production
+aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
+aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,1.42e-17,transportation
+aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,2.85e-17,transportation
+aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended),glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,1.25e-16,transportation
+aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended),us_diesel_mix_at_refinery_ts,2.71e-10,transportation
+aluminium,recycling_100,TRACI 2.1,Human toxicity,non-canc. (recommended),us_electricity_grid_mix_ts,1.26e-10,production
 aluminium,recycling_100,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,total_impact,9.66e-13,total_impact
 aluminium,recycling_100,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,eu_28_ferro_metals_on_landfill_ts,NA,end-of-life
 aluminium,recycling_100,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,7.73e-12,production
@@ -575,18 +575,18 @@ aluminium,recycling_100,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,glo_truck_e
 aluminium,recycling_100,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,NA,transportation
 aluminium,recycling_100,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,us_diesel_mix_at_refinery_ts,5.98e-19,transportation
 aluminium,recycling_100,TRACI 2.1,Ozone Depletion Air ,kg CFC 11 eq.,us_electricity_grid_mix_ts,3.11e-17,production
-aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels ,total_impact,0.111,total_impact
-aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels ,eu_28_ferro_metals_on_landfill_ts,NA,end-of-life
-aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.534,production
-aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.518,end-of-life
-aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0386,end-of-life
-aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels ,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.04,production
-aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels ,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
-aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels ,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,NA,transportation
-aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels ,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,NA,transportation
-aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels ,us_diesel_mix_at_refinery_ts,0.0106,transportation
-aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels ,us_electricity_grid_mix_ts,0.0067,production
+aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels,total_impact,0.111,total_impact
+aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels,eu_28_ferro_metals_on_landfill_ts,NA,end-of-life
+aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.534,production
+aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium_2,-0.518,end-of-life
+aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels,eu28_efta_turkey_aluminium_remelting_wrought_alloys_ingot_from_scrap_2015_european_aluminium_p_agg,0.0386,end-of-life
+aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels,eu28_efta_turkey_aluminium_sheet_2015_european_aluminium_p_agg,0.04,production
+aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
+aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
+aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,NA,transportation
+aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,NA,transportation
+aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels,us_diesel_mix_at_refinery_ts,0.0106,transportation
+aluminium,recycling_100,TRACI 2.1,Resources,Fossil fuels,us_electricity_grid_mix_ts,0.0067,production
 aluminium,recycling_100,TRACI 2.1,Smog Air ,kg O3 eq.,total_impact,0.00348,total_impact
 aluminium,recycling_100,TRACI 2.1,Smog Air ,kg O3 eq.,eu_28_ferro_metals_on_landfill_ts,NA,end-of-life
 aluminium,recycling_100,TRACI 2.1,Smog Air ,kg O3 eq.,eu28_efta_primary_aluminium_ingot_consumption_mix_2015_european_aluminium,0.0284,production
@@ -632,17 +632,6 @@ glass,base_scenario,TRACI 2.1,Eutrophication ,kg N eq.,glo_truck_euro_5_28_32t_g
 glass,base_scenario,TRACI 2.1,Eutrophication ,kg N eq.,us_diesel_mix_at_refinery_ts,1.3e-5,transportation
 glass,base_scenario,TRACI 2.1,Eutrophication ,kg N eq.,us_electricity_grid_mix_ts,1.82e-8,production
 glass,base_scenario,TRACI 2.1,Eutrophication ,kg N eq.,us_lubricants_at_refinery_ts,1.08e-10,production
-glass,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,total_impact,0.593,total_impact
-glass,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_container_glass_ts_p_agg,0.499,production
-glass,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_inert_matter_glass_on_landfill_ts,0.00856,end-of-life
-glass,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,0.00201,transportation
-glass,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_steel_tinplated_worldsteel,0.0149,production
-glass,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,0.00605,transportation
-glass,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,4.49e-4,transportation
-glass,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so_2,0.0512,transportation
-glass,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_diesel_mix_at_refinery_ts,0.0105,transportation
-glass,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_electricity_grid_mix_ts,1.58e-4,production
-glass,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_lubricants_at_refinery_ts,7.36e-7,production
 glass,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,total_impact,0.592,total_impact
 glass,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_container_glass_ts_p_agg,0.498,production
 glass,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_inert_matter_glass_on_landfill_ts,0.00784,end-of-life
@@ -753,17 +742,6 @@ glass,truck_0,TRACI 2.1,Eutrophication ,kg N eq.,glo_truck_euro_5_28_32t_gross_w
 glass,truck_0,TRACI 2.1,Eutrophication ,kg N eq.,us_diesel_mix_at_refinery_ts,1.22e-5,transportation
 glass,truck_0,TRACI 2.1,Eutrophication ,kg N eq.,us_electricity_grid_mix_ts,1.82e-8,production
 glass,truck_0,TRACI 2.1,Eutrophication ,kg N eq.,us_lubricants_at_refinery_ts,1.08e-10,production
-glass,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,total_impact,0.588,total_impact
-glass,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_container_glass_ts_p_agg,0.499,production
-glass,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_inert_matter_glass_on_landfill_ts,0.00856,end-of-life
-glass,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,0.00402,transportation
-glass,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_steel_tinplated_worldsteel,0.0149,production
-glass,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
-glass,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,4.49e-4,transportation
-glass,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so_2,0.0512,transportation
-glass,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_diesel_mix_at_refinery_ts,0.00979,transportation
-glass,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_electricity_grid_mix_ts,1.58e-4,production
-glass,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_lubricants_at_refinery_ts,7.36e-7,production
 glass,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,total_impact,0.587,total_impact
 glass,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_container_glass_ts_p_agg,0.498,production
 glass,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_inert_matter_glass_on_landfill_ts,0.00784,end-of-life
@@ -874,17 +852,6 @@ glass,truck_100,TRACI 2.1,Eutrophication ,kg N eq.,glo_truck_euro_5_28_32t_gross
 glass,truck_100,TRACI 2.1,Eutrophication ,kg N eq.,us_diesel_mix_at_refinery_ts,1.39e-5,transportation
 glass,truck_100,TRACI 2.1,Eutrophication ,kg N eq.,us_electricity_grid_mix_ts,1.82e-8,production
 glass,truck_100,TRACI 2.1,Eutrophication ,kg N eq.,us_lubricants_at_refinery_ts,1.08e-10,production
-glass,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,total_impact,0.597,total_impact
-glass,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_container_glass_ts_p_agg,0.499,production
-glass,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_inert_matter_glass_on_landfill_ts,0.00856,end-of-life
-glass,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-glass,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_steel_tinplated_worldsteel,0.0149,production
-glass,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,0.0121,transportation
-glass,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,4.49e-4,transportation
-glass,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so_2,0.0512,transportation
-glass,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_diesel_mix_at_refinery_ts,0.0112,transportation
-glass,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_electricity_grid_mix_ts,1.58e-4,production
-glass,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_lubricants_at_refinery_ts,7.36e-7,production
 glass,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,total_impact,0.597,total_impact
 glass,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_container_glass_ts_p_agg,0.498,production
 glass,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_inert_matter_glass_on_landfill_ts,0.00784,end-of-life
@@ -995,17 +962,6 @@ glass,mass_370,TRACI 2.1,Eutrophication ,kg N eq.,glo_truck_euro_5_28_32t_gross_
 glass,mass_370,TRACI 2.1,Eutrophication ,kg N eq.,us_diesel_mix_at_refinery_ts,8.5e-6,transportation
 glass,mass_370,TRACI 2.1,Eutrophication ,kg N eq.,us_electricity_grid_mix_ts,1.82e-8,production
 glass,mass_370,TRACI 2.1,Eutrophication ,kg N eq.,us_lubricants_at_refinery_ts,1.08e-10,production
-glass,mass_370,TRACI 2.1,Global Warming Air,excl. biogenic carbon,total_impact,0.39,total_impact
-glass,mass_370,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_container_glass_ts_p_agg,0.324,production
-glass,mass_370,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_inert_matter_glass_on_landfill_ts,0.00558,end-of-life
-glass,mass_370,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,0.00131,transportation
-glass,mass_370,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_steel_tinplated_worldsteel,0.0149,production
-glass,mass_370,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,0.00394,transportation
-glass,mass_370,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,4.49e-4,transportation
-glass,mass_370,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so_2,0.0332,transportation
-glass,mass_370,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_diesel_mix_at_refinery_ts,0.00685,transportation
-glass,mass_370,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_electricity_grid_mix_ts,1.58e-4,production
-glass,mass_370,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_lubricants_at_refinery_ts,7.36e-7,production
 glass,mass_370,TRACI 2.1,Global Warming Air,incl. biogenic carbon,total_impact,0.39,total_impact
 glass,mass_370,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_container_glass_ts_p_agg,0.324,production
 glass,mass_370,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_inert_matter_glass_on_landfill_ts,0.00511,end-of-life
@@ -1125,20 +1081,6 @@ PET,base_scenario,TRACI 2.1,Eutrophication ,kg N eq.,rer_polyethylene_terephthal
 PET,base_scenario,TRACI 2.1,Eutrophication ,kg N eq.,rer_polypropylene_granulate_pp_elcd_plastics_europe_p_agg,3.65e-6,production
 PET,base_scenario,TRACI 2.1,Eutrophication ,kg N eq.,us_diesel_mix_at_refinery_ts,1.1e-6,transportation
 PET,base_scenario,TRACI 2.1,Eutrophication ,kg N eq.,us_electricity_grid_mix_ts,3.82e-6,production
-PET,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,total_impact,0.111,total_impact
-PET,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,pet_bottle_recycling_lc,0.0132,end-of-life
-PET,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_plastic_waste_on_landfill_ts,0.00151,end-of-life
-PET,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_process_water_ts,2.02e-6,production
-PET,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,1.54e-4,transportation
-PET,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,4.63e-4,transportation
-PET,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,4.63e-4,transportation
-PET,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,3.59e-4,transportation
-PET,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so_2,0.00359,transportation
-PET,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,rer_polyethylene_terephthalate_granulate_bottle_grade_at_plant_plastics_europe,0.088,production
-PET,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,rer_polyethylene_terephthalate_granulate_bottle_grade_at_plant_plastics_europe_2,-0.0385,end-of-life
-PET,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,rer_polypropylene_granulate_pp_elcd_plastics_europe_p_agg,0.00802,production
-PET,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_diesel_mix_at_refinery_ts,8.85e-4,transportation
-PET,base_scenario,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_electricity_grid_mix_ts,0.0332,production
 PET,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,total_impact,0.111,total_impact
 PET,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,pet_bottle_recycling_lc,0.0132,end-of-life
 PET,base_scenario,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_plastic_waste_on_landfill_ts,0.00145,end-of-life
@@ -1279,20 +1221,6 @@ PET,truck_0,TRACI 2.1,Eutrophication ,kg N eq.,rer_polyethylene_terephthalate_gr
 PET,truck_0,TRACI 2.1,Eutrophication ,kg N eq.,rer_polypropylene_granulate_pp_elcd_plastics_europe_p_agg,3.65e-6,production
 PET,truck_0,TRACI 2.1,Eutrophication ,kg N eq.,us_diesel_mix_at_refinery_ts,1.03e-6,transportation
 PET,truck_0,TRACI 2.1,Eutrophication ,kg N eq.,us_electricity_grid_mix_ts,3.82e-6,production
-PET,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,total_impact,0.111,total_impact
-PET,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,pet_bottle_recycling_lc,0.0132,end-of-life
-PET,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_plastic_waste_on_landfill_ts,0.00151,end-of-life
-PET,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_process_water_ts,2.02e-6,production
-PET,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,3.08e-4,transportation
-PET,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,NA,transportation
-PET,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,4.63e-4,transportation
-PET,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,3.59e-4,transportation
-PET,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so_2,0.00359,transportation
-PET,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,rer_polyethylene_terephthalate_granulate_bottle_grade_at_plant_plastics_europe,0.088,production
-PET,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,rer_polyethylene_terephthalate_granulate_bottle_grade_at_plant_plastics_europe_2,-0.0385,end-of-life
-PET,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,rer_polypropylene_granulate_pp_elcd_plastics_europe_p_agg,0.00802,production
-PET,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_diesel_mix_at_refinery_ts,8.31e-4,transportation
-PET,truck_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_electricity_grid_mix_ts,0.0332,production
 PET,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,total_impact,0.111,total_impact
 PET,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,pet_bottle_recycling_lc,0.0132,end-of-life
 PET,truck_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_plastic_waste_on_landfill_ts,0.00145,end-of-life
@@ -1433,20 +1361,6 @@ PET,truck_100,TRACI 2.1,Eutrophication ,kg N eq.,rer_polyethylene_terephthalate_
 PET,truck_100,TRACI 2.1,Eutrophication ,kg N eq.,rer_polypropylene_granulate_pp_elcd_plastics_europe_p_agg,3.65e-6,production
 PET,truck_100,TRACI 2.1,Eutrophication ,kg N eq.,us_diesel_mix_at_refinery_ts,1.17e-6,transportation
 PET,truck_100,TRACI 2.1,Eutrophication ,kg N eq.,us_electricity_grid_mix_ts,3.82e-6,production
-PET,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,total_impact,0.112,total_impact
-PET,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,pet_bottle_recycling_lc,0.0132,end-of-life
-PET,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_plastic_waste_on_landfill_ts,0.00151,end-of-life
-PET,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_process_water_ts,2.02e-6,production
-PET,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,NA,transportation
-PET,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,9.25e-4,transportation
-PET,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,4.63e-4,transportation
-PET,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,3.59e-4,transportation
-PET,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so_2,0.00359,transportation
-PET,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,rer_polyethylene_terephthalate_granulate_bottle_grade_at_plant_plastics_europe,0.088,production
-PET,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,rer_polyethylene_terephthalate_granulate_bottle_grade_at_plant_plastics_europe_2,-0.0385,end-of-life
-PET,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,rer_polypropylene_granulate_pp_elcd_plastics_europe_p_agg,0.00802,production
-PET,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_diesel_mix_at_refinery_ts,9.4e-4,transportation
-PET,truck_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_electricity_grid_mix_ts,0.0332,production
 PET,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,total_impact,0.112,total_impact
 PET,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,pet_bottle_recycling_lc,0.0132,end-of-life
 PET,truck_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_plastic_waste_on_landfill_ts,0.00145,end-of-life
@@ -1587,20 +1501,6 @@ PET,recycling_0,TRACI 2.1,Eutrophication ,kg N eq.,rer_polyethylene_terephthalat
 PET,recycling_0,TRACI 2.1,Eutrophication ,kg N eq.,rer_polypropylene_granulate_pp_elcd_plastics_europe_p_agg,3.65e-6,production
 PET,recycling_0,TRACI 2.1,Eutrophication ,kg N eq.,us_diesel_mix_at_refinery_ts,9.97e-7,transportation
 PET,recycling_0,TRACI 2.1,Eutrophication ,kg N eq.,us_electricity_grid_mix_ts,3.82e-6,production
-PET,recycling_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,total_impact,0.138,total_impact
-PET,recycling_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,pet_bottle_recycling_lc,NA,end-of-life
-PET,recycling_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_plastic_waste_on_landfill_ts,0.00301,end-of-life
-PET,recycling_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_process_water_ts,2.02e-6,production
-PET,recycling_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,1.54e-4,transportation
-PET,recycling_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,4.63e-4,transportation
-PET,recycling_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,NA,transportation
-PET,recycling_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,3.59e-4,transportation
-PET,recycling_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so_2,0.00359,transportation
-PET,recycling_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,rer_polyethylene_terephthalate_granulate_bottle_grade_at_plant_plastics_europe,0.088,production
-PET,recycling_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,rer_polyethylene_terephthalate_granulate_bottle_grade_at_plant_plastics_europe_2,NA,end-of-life
-PET,recycling_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,rer_polypropylene_granulate_pp_elcd_plastics_europe_p_agg,0.00802,production
-PET,recycling_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_diesel_mix_at_refinery_ts,8.04e-4,transportation
-PET,recycling_0,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_electricity_grid_mix_ts,0.0332,production
 PET,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,total_impact,0.137,total_impact
 PET,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,pet_bottle_recycling_lc,NA,end-of-life
 PET,recycling_0,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_plastic_waste_on_landfill_ts,0.00291,end-of-life
@@ -1741,20 +1641,6 @@ PET,recycling_100,TRACI 2.1,Eutrophication ,kg N eq.,rer_polyethylene_terephthal
 PET,recycling_100,TRACI 2.1,Eutrophication ,kg N eq.,rer_polypropylene_granulate_pp_elcd_plastics_europe_p_agg,3.65e-6,production
 PET,recycling_100,TRACI 2.1,Eutrophication ,kg N eq.,us_diesel_mix_at_refinery_ts,1.2e-6,transportation
 PET,recycling_100,TRACI 2.1,Eutrophication ,kg N eq.,us_electricity_grid_mix_ts,3.82e-6,production
-PET,recycling_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,total_impact,0.0851,total_impact
-PET,recycling_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,pet_bottle_recycling_lc,0.0264,end-of-life
-PET,recycling_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_plastic_waste_on_landfill_ts,NA,end-of-life
-PET,recycling_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,eu_28_process_water_ts,2.02e-6,production
-PET,recycling_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_rail_transport_cargo_diesel_average_train_gross_tonne_weight_1_000t_726t_payload_capacity_ts_u_so,1.54e-4,transportation
-PET,recycling_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so,4.63e-4,transportation
-PET,recycling_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_20_26t_gross_weight_17_3t_payload_capacity_ts_u_so_2,9.25e-4,transportation
-PET,recycling_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so,3.59e-4,transportation
-PET,recycling_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,glo_truck_euro_5_28_32t_gross_weight_22t_payload_capacity_ts_u_so_2,0.00359,transportation
-PET,recycling_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,rer_polyethylene_terephthalate_granulate_bottle_grade_at_plant_plastics_europe,0.088,production
-PET,recycling_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,rer_polyethylene_terephthalate_granulate_bottle_grade_at_plant_plastics_europe_2,-0.0771,end-of-life
-PET,recycling_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,rer_polypropylene_granulate_pp_elcd_plastics_europe_p_agg,0.00802,production
-PET,recycling_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_diesel_mix_at_refinery_ts,9.67e-4,transportation
-PET,recycling_100,TRACI 2.1,Global Warming Air,excl. biogenic carbon,us_electricity_grid_mix_ts,0.0332,production
 PET,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,total_impact,0.0851,total_impact
 PET,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,pet_bottle_recycling_lc,0.0264,end-of-life
 PET,recycling_100,TRACI 2.1,Global Warming Air,incl. biogenic carbon,eu_28_plastic_waste_on_landfill_ts,NA,end-of-life
