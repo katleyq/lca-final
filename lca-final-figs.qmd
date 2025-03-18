@@ -50,8 +50,39 @@ containers %>%
   theme_bw() +
   facet_wrap(~impact_type, scales = "free_y") +
   scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_manual(values = c("truck_0" = "pink", 
+                               "truck_100" = "darkred",   
+                               "recycling_0" = "#ADD8E6",  
+                               "recycling_100" = "steelblue", 
+                               "base_scenario" = "#000000", 
+                               "mass_370" = "darkgreen"))     
+
 ```
+
+
+```{r}
+containers %>% 
+  filter(container == "aluminium",
+         process == "total_impact") %>% 
+  group_by(scenario, impact_type) %>%
+  ggplot(aes(x = scenario, y = value, fill = scenario)) +
+  geom_bar(stat="identity", position = "dodge") +
+  labs(y = "Total Impact",
+       x = "Scenario",
+       title = "Aluminium",
+       subtitle = "Sensitivity Analysis by Impact Category") +
+  theme_bw() +
+  facet_wrap(~impact_type, scales = "free_y") +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  scale_fill_manual(values = c("truck_0" = "pink", 
+                               "truck_100" = "darkred",   
+                               "recycling_0" = "#ADD8E6",  
+                               "recycling_100" = "steelblue", 
+                               "base_scenario" = "#000000", 
+                               "mass_370" = "darkgreen")) 
+``` 
 
 ```{r}
 containers %>% 
@@ -67,8 +98,15 @@ containers %>%
   theme_bw() +
   facet_wrap(~impact_type, scales = "free_y") +
   scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_manual(values = c("truck_0" = "pink", 
+                               "truck_100" = "darkred",   
+                               "recycling_0" = "#ADD8E6",  
+                               "recycling_100" = "steelblue", 
+                               "base_scenario" = "#000000", 
+                               "mass_370" = "darkgreen")) 
 ```
+
 ```{r}
 containers %>% 
   filter(container == "glass",
@@ -83,7 +121,13 @@ containers %>%
   theme_bw() +
   facet_wrap(~impact_type, scales = "free_y") +
   scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_manual(values = c("truck_0" = "pink", 
+                               "truck_100" = "darkred",   
+                               "recycling_0" = "#ADD8E6",  
+                               "recycling_100" = "steelblue", 
+                               "base_scenario" = "#000000", 
+                               "mass_370" = "darkgreen")) 
 ```
 
 ```{r}
@@ -141,7 +185,11 @@ containers %>%
        subtitle = "Contribution Analysis by Impact Category") +
   theme_bw() +
   facet_wrap(~impact_type, scales = "free_y") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_manual(values = c("production" = "darkgreen", 
+                               "transportation" = "steelblue",   
+                               "end-of-life" = "darkred",  
+                               "total_impact" = "#000000")) 
 ```
 
 ```{r}
@@ -159,7 +207,11 @@ containers %>%
        subtitle = "Contribution Analysis by Impact Category") +
   theme_bw() +
   facet_wrap(~impact_type, scales = "free_y") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_manual(values = c("production" = "darkgreen", 
+                               "transportation" = "steelblue",   
+                               "end-of-life" = "darkred",  
+                               "total_impact" = "#000000")) 
 ```
 
 ```{r}
@@ -178,6 +230,23 @@ containers %>%
   theme_bw() +
   facet_wrap(~impact_type, scales = "free_y") +
   scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_manual(values = c("production" = "darkgreen", 
+                               "transportation" = "steelblue",   
+                               "end-of-life" = "darkred",  
+                               "total_impact" = "#000000")) 
+```
+
+```{r}
+normalized_total_impact %>%
+  filter(impact_category != "Global Warming Air excl. biogenic carbon") %>% 
+  select(scenario, impact_type, glass, aluminium, PET) %>% 
+  distinct() %>% 
+  gt() %>%
+  tab_header(title = "Total Impact Comparison By Impact Category") %>%
+  fmt_number(
+    columns = where(is.numeric),
+    n_sigfig = 3  
+  )
 ```
 
