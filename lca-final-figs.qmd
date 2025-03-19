@@ -25,7 +25,7 @@ containers <- read_csv(here("data/all_containers.csv")) %>%
     TRUE ~ impact_type
   )) %>% 
   filter(impact_type != "Particulate Air",
-         impact_type != "Smog Air",
+         impact_type != "Ozone Depletion",
          impact_type != "Resources")
 
 normalized_total_impact <- read_csv(here("data/normalized_total_impact.csv")) %>%
@@ -312,6 +312,34 @@ normalized_total_impact %>%
   distinct() %>% 
   gt() %>%
   tab_header(title = "Total Impact Comparison By Impact Category") %>%
+  fmt_number(
+    columns = where(is.numeric),
+    n_sigfig = 3  
+  )
+```
+
+```{r}
+test <- containers %>% 
+  filter(container == "aluminium",
+         scenario == "base_scenario",
+         impact_type == "Ecotoxicity") 
+```
+
+
+```{r}
+containers %>% 
+  filter(container == "aluminium",
+         scenario == "base_scenario",
+         impact_type == "Ecotoxicity",
+         process != "total_impact") %>% 
+  select(container, scenario, process, value) %>% 
+  mutate(sum_impact = sum(value, na.rm = TRUE)) %>% 
+  mutate(percent_impact = (value / sum_impact)*100) %>% 
+  select(process, value, percent_impact, sum_impact) %>% 
+  arrange(desc(percent_impact)) %>% 
+  head(5) %>% 
+  gt() %>%
+  tab_header(title = "Assignment 3: Aluminium") %>%
   fmt_number(
     columns = where(is.numeric),
     n_sigfig = 3  
